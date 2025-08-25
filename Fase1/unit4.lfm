@@ -1,0 +1,104 @@
+object Form3: TForm3
+  Left = 248
+  Height = 560
+  Top = 32
+  Width = 298
+  Caption = 'Form3'
+  ClientHeight = 560
+  ClientWidth = 298
+  Color = clSkyBlue
+  object entryButton: TButton
+    Left = 72
+    Height = 25
+    Top = 96
+    Width = 160
+    Caption = 'Badeja de entrada'
+    TabOrder = 0
+    OnClick = entryButtonClick
+  end
+  object sedButton: TButton
+    Left = 72
+    Height = 25
+    Top = 144
+    Width = 160
+    Caption = 'Enviar Correo'
+    TabOrder = 1
+  end
+  object trashButton: TButton
+    Left = 72
+    Height = 25
+    Top = 192
+    Width = 160
+    Caption = 'Papelera'
+    TabOrder = 2
+    OnClick = trashButtonClick
+  end
+  object programButton: TButton
+    Left = 72
+    Height = 25
+    Top = 240
+    Width = 160
+    Caption = 'Programar Correo'
+    TabOrder = 3
+  end
+  object programedButton: TButton
+    Left = 72
+    Height = 25
+    Top = 288
+    Width = 160
+    Caption = 'Correos programados'
+    TabOrder = 4
+  end
+  object addCButton: TButton
+    Left = 72
+    Height = 25
+    Top = 336
+    Width = 160
+    Caption = 'Agregar Contacto'
+    TabOrder = 5
+  end
+  object postButton: TButton
+    Left = 72
+    Height = 25
+    Top = 384
+    Width = 160
+    Caption = 'Actualizar Perfil'
+    TabOrder = 6
+  end
+  object reportButton: TButton
+    Left = 72
+    Height = 25
+    Top = 432
+    Width = 160
+    Caption = 'Generar Reportes'
+    TabOrder = 7
+  end
+  object exitButton: TButton
+    Left = 112
+    Height = 25
+    Top = 488
+    Width = 75
+    Caption = 'Salir'
+    TabOrder = 8
+    OnClick = exitButtonClick
+  end
+  object Label1: TLabel
+    Left = 96
+    Height = 23
+    Top = 16
+    Width = 111
+    Caption = 'Bienvienido'
+    Font.Height = -19
+    Font.Name = 'Sans'
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 96
+    Height = 1
+    Top = 48
+    Width = 1
+    Font.Height = -20
+    Font.Name = 'Sans'
+    ParentFont = False
+  end
+end

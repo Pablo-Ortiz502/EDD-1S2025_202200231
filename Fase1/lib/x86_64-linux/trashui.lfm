@@ -1,0 +1,69 @@
+object Form5: TForm5
+  Left = 387
+  Height = 483
+  Top = 32
+  Width = 639
+  Caption = 'Form5'
+  ClientHeight = 483
+  ClientWidth = 639
+  OnCreate = FormCreate
+  object ListView1: TListView
+    Left = 48
+    Height = 256
+    Top = 128
+    Width = 554
+    Columns = <>
+    ReadOnly = True
+    TabOrder = 0
+    OnClick = ListView1Click
+  end
+  object Label1: TLabel
+    Left = 48
+    Height = 25
+    Top = 24
+    Width = 103
+    Caption = 'Papelera'
+    Font.Height = -21
+    Font.Name = 'Sans'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object findEdit: TEdit
+    Left = 136
+    Height = 36
+    Top = 80
+    Width = 466
+    TabOrder = 1
+    OnChange = findEditChange
+  end
+  object findButton: TButton
+    Left = 48
+    Height = 36
+    Top = 80
+    Width = 75
+    Caption = 'Buscar'
+    Enabled = False
+    TabOrder = 2
+    OnClick = findButtonClick
+  end
+  object returnButton: TButton
+    Left = 48
+    Height = 33
+    Top = 408
+    Width = 128
+    Caption = 'Regresar'
+    TabOrder = 3
+    OnClick = returnButtonClick
+  end
+  object deleteButton: TButton
+    Left = 472
+    Height = 33
+    Top = 408
+    Width = 128
+    Caption = 'Borrar'
+    Color = clRed
+    Enabled = False
+    TabOrder = 4
+    OnClick = deleteButtonClick
+  end
+end

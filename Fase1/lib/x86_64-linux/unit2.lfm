@@ -1,0 +1,52 @@
+object Form2: TForm2
+  Left = 1520
+  Height = 329
+  Top = 32
+  Width = 320
+  Caption = 'Root'
+  ClientHeight = 329
+  ClientWidth = 320
+  object Root: TLabel
+    Left = 128
+    Height = 34
+    Top = 24
+    Width = 66
+    Caption = 'Root'
+    Font.Height = -29
+    Font.Name = 'Sans'
+    ParentFont = False
+  end
+  object loadButton: TButton
+    Left = 80
+    Height = 32
+    Top = 88
+    Width = 168
+    Caption = 'Carga Masiva'
+    TabOrder = 0
+  end
+  object repUserB: TButton
+    Left = 80
+    Height = 32
+    Top = 128
+    Width = 168
+    Caption = 'Reporte de Usuarios'
+    TabOrder = 1
+  end
+  object repReB: TButton
+    Left = 80
+    Height = 32
+    Top = 168
+    Width = 168
+    Caption = 'Reporte de Relaciones'
+    TabOrder = 2
+  end
+  object exitButton: TButton
+    Left = 96
+    Height = 32
+    Top = 232
+    Width = 136
+    Caption = 'Salir'
+    TabOrder = 3
+    OnClick = exitButtonClick
+  end
+end
