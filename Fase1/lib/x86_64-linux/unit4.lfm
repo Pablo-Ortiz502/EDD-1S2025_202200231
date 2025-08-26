@@ -56,6 +56,7 @@ object Form3: TForm3
     Width = 160
     Caption = 'Agregar Contacto'
     TabOrder = 5
+    OnClick = addCButtonClick
   end
   object postButton: TButton
     Left = 72
@@ -64,6 +65,7 @@ object Form3: TForm3
     Width = 160
     Caption = 'Actualizar Perfil'
     TabOrder = 6
+    OnClick = postButtonClick
   end
   object reportButton: TButton
     Left = 72

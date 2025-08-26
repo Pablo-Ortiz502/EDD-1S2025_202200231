@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <Compiler Value="/usr/bin/fpc" Date="1625802185"/>
-  <Params Value="-MObjFPC -Scghi -Cg -O1 -gw3 -gl -l -vewnhibq -Fi/home/edd/[EDD]1S2025_202200231/lib/x86_64-linux -Fu/home/edd/[EDD]1S2025_202200231/ -Fu/usr/share/lazarus/4.2.0/lcl/units/x86_64-linux/gtk2 -Fu/usr/share/lazarus/4.2.0/lcl/units/x86_64-linux -Fu/usr/share/lazarus/4.2.0/components/freetype/lib/x86_64-linux -Fu/usr/share/lazarus/4.2.0/components/lazutils/lib/x86_64-linux -Fu/usr/share/lazarus/4.2.0/packager/units/x86_64-linux -FU/home/edd/[EDD]1S2025_202200231/lib/x86_64-linux/ -FE/home/edd/[EDD]1S2025_202200231/ -o/home/edd/[EDD]1S2025_202200231/project1 -dLCL -dLCLgtk2 project1.lpr"/>
+  <Params Value="-MObjFPC -Scghi -Cg -O1 -gw3 -gl -l -vewnhibq &apos;-Fi/home/edd/Edd Proyecto/Fase1/lib/x86_64-linux&apos; &apos;-Fu/home/edd/Edd Proyecto/Fase1/&apos; -Fu/usr/share/lazarus/4.2.0/lcl/units/x86_64-linux/gtk2 -Fu/usr/share/lazarus/4.2.0/lcl/units/x86_64-linux -Fu/usr/share/lazarus/4.2.0/components/freetype/lib/x86_64-linux -Fu/usr/share/lazarus/4.2.0/components/lazutils/lib/x86_64-linux -Fu/usr/share/lazarus/4.2.0/packager/units/x86_64-linux &apos;-FU/home/edd/Edd Proyecto/Fase1/lib/x86_64-linux/&apos; &apos;-FE/home/edd/Edd Proyecto/Fase1/&apos; &apos;-o/home/edd/Edd Proyecto/Fase1/project1&apos; -dLCL -dLCLgtk2 project1.lpr"/>
 </CONFIG>

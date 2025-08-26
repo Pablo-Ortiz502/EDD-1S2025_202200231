@@ -25,12 +25,11 @@ type
 
   public
     acc: User;
+    userList: LinkedList;
   end;
 
 var
   Form1: TForm1;
-
-  userList: LinkedList;
 
 implementation
   uses Unit2,Unit4;
@@ -66,7 +65,6 @@ begin
     userList.add(User.create(1,41877278,'Pablo','1','1','pablo@gmail.com'));
     userList.add(User.create(2,41877278,'Pablo','EliteDragon','1234','pablo@gmail.com'));
     userList.add(User.create(3,41877278,'Cesar','Elliwood','qwer','cesar@gmail.com'));
-    userList.print;
 end;
 
 

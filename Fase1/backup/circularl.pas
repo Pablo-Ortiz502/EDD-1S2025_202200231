@@ -74,7 +74,7 @@ implementation
         var
           newNode, current: CNode;
         begin
-          New(newNode); //hace que el apuntador vaya a un espacio de memoria libre
+          New(newNode);
           newNode^.data := aContact;
           newNode^.next := nil;
 

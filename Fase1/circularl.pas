@@ -76,10 +76,13 @@ implementation
         begin
           New(newNode);
           newNode^.data := aContact;
-          newNode^.next := nil;
+          newNode^.next := head;
 
           if head = nil then
-            head := newNode
+           begin
+            head := newNode;
+            newNode^.next:= head;
+           end
           else
             begin
               current := head;

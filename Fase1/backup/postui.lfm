@@ -1,0 +1,113 @@
+object Form7: TForm7
+  Left = 379
+  Height = 434
+  Top = 32
+  Width = 455
+  Caption = 'Form7'
+  ClientHeight = 434
+  ClientWidth = 455
+  Font.Height = -17
+  Font.Name = 'Sans'
+  object Label1: TLabel
+    Left = 58
+    Height = 21
+    Top = 120
+    Width = 74
+    Caption = 'Nombre:'
+  end
+  object Label2: TLabel
+    Left = 58
+    Height = 21
+    Top = 168
+    Width = 70
+    Caption = 'Usuario:'
+  end
+  object Label3: TLabel
+    Left = 56
+    Height = 21
+    Top = 216
+    Width = 62
+    Caption = 'Correo:'
+  end
+  object Label4: TLabel
+    Left = 56
+    Height = 21
+    Top = 264
+    Width = 75
+    Caption = 'Telefono:'
+  end
+  object nameEdit: TEdit
+    Left = 144
+    Height = 35
+    Top = 112
+    Width = 240
+    Font.Height = -15
+    Font.Name = 'Sans'
+    ParentFont = False
+    TabOrder = 0
+    OnChange = nameEditChange
+  end
+  object userEdit: TEdit
+    Left = 144
+    Height = 35
+    Top = 160
+    Width = 240
+    Font.Height = -15
+    Font.Name = 'Sans'
+    ParentFont = False
+    TabOrder = 1
+    OnChange = userEditChange
+  end
+  object mailEdit: TEdit
+    Left = 144
+    Height = 35
+    Top = 208
+    Width = 240
+    Font.Height = -15
+    Font.Name = 'Sans'
+    ParentFont = False
+    TabOrder = 2
+    OnChange = mailEditChange
+  end
+  object telEdit: TEdit
+    Left = 144
+    Height = 35
+    Top = 256
+    Width = 240
+    Font.Height = -15
+    Font.Name = 'Sans'
+    ParentFont = False
+    TabOrder = 3
+    OnChange = telEditChange
+  end
+  object Label5: TLabel
+    Left = 128
+    Height = 29
+    Top = 32
+    Width = 215
+    Caption = 'Actualizar Perfil'
+    Font.Height = -24
+    Font.Name = 'Sans'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object returButton: TButton
+    Left = 56
+    Height = 41
+    Top = 344
+    Width = 104
+    Caption = 'Regresar'
+    TabOrder = 4
+    OnClick = returButtonClick
+  end
+  object editButton: TButton
+    Left = 288
+    Height = 41
+    Top = 344
+    Width = 104
+    Caption = 'Editar'
+    Enabled = False
+    TabOrder = 5
+    OnClick = editButtonClick
+  end
+end

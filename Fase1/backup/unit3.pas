@@ -5,7 +5,7 @@ unit Unit3;
 interface
 
 uses
-  Classes, SysUtils, Unit5,stackL;
+  Classes, SysUtils, Unit5,stackL,circularL;
 
 type
 
@@ -18,6 +18,7 @@ type
         tel: Integer;
         messListU : DoubleList;
         trashList: StackList;
+        contactList: CircularList;
         constructor create(aId, aTel: Integer; aName,aUser,aPassword,aEmail: string);
     end;
 
@@ -55,6 +56,7 @@ implementation
         user := aUser;
         MessListU := DoubleList.create;
         trashList := StackList.create;
+        contactList := CircularList.create;
       end;
 
 
@@ -83,7 +85,7 @@ implementation
         var
           newNode, current: Node;
         begin
-          New(newNode); //hace que el apuntador vaya a un espacio de memoria libre
+          New(newNode);
           newNode^.data := aUser;
           newNode^.next := nil;
 
