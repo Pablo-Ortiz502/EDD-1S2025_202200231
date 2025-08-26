@@ -18,6 +18,7 @@ type
     exitButton: TButton;
     Root: TLabel;
     procedure exitButtonClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
   private
 
   public
@@ -39,8 +40,13 @@ implementation
    Form1.userEdit.Text := '';
    Form1.passEdit.Text := '';
    Form1.Show;
-   Form2.Close;
+   Form2.Hide;
  end;
+
+procedure TForm2.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+begin
+   Application.Terminate;
+end;
 
 end.
 

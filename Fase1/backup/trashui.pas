@@ -22,6 +22,7 @@ type
     procedure deleteButtonClick(Sender: TObject);
     procedure findButtonClick(Sender: TObject);
     procedure findEditChange(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure ListView1Click(Sender: TObject);
     procedure returnButtonClick(Sender: TObject);
@@ -107,7 +108,7 @@ end;
 procedure TForm5.returnButtonClick(Sender: TObject);
 begin
   Form3.Show;
-  Form5.Close;
+  Form5.Hide;
 end;
 
 procedure TForm5.findEditChange(Sender: TObject);
@@ -121,6 +122,11 @@ begin
     end;
 end;
 
+procedure TForm5.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+begin
+  Application.Terminate;
+end;
+
 procedure TForm5.findButtonClick(Sender: TObject);
 begin
   messList := tLogUser.trashList.findBySubject(Form5.findEdit.Text);       // arreglar el metodo no filtra
@@ -131,8 +137,10 @@ procedure TForm5.deleteButtonClick(Sender: TObject);
 begin
   if (MessageDlg('Esta seguro de descartar el mensaje',mtWarning,[mbOk,mbCancel],0) = mrOk) then
     begin
-      messList.deleteById(Integer(ListView1.Selected.Data));
+      tLogUser.trashList.deleteById(Integer(ListView1.Selected.Data));
       ShowMessage('Mensaje Descartado');
+      messList := tLogUser.trashList;
+      Form5.findEdit.Text:='';
       Form5.refreshList(listView1);
     end;
 end;

@@ -23,6 +23,7 @@ type
     TNode = record
       data: Contact;
       next: CNode;
+      prev: CNode;
     end;
 
 
@@ -76,18 +77,20 @@ implementation
         begin
           New(newNode);
           newNode^.data := aContact;
-          newNode^.next := nil;
 
           if head = nil then
-            head := newNode
+           begin
+            head := newNode;
+            head^.next:= head;
+            head^.prev := head;
+           end
           else
             begin
-              current := head;
-              while current^.next <> head do
-                current := current^.next;
-              current^.next := newNode;
+              current := head^.prev;
               newNode^.next := head;
-
+              newNode^.prev := current;
+              current^.next := newNode;
+              head^.prev := newNode;
             end;
         end;
 

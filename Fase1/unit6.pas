@@ -26,6 +26,7 @@ type
     dateLabel: TLabel;
     subjecLabel: TLabel;
     procedure discardButtonClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure ListView1Click(Sender: TObject);
     procedure returnButtonClick(Sender: TObject);
@@ -129,6 +130,11 @@ begin
     end;
 end;
 
+procedure TForm4.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+begin
+  Application.Terminate;
+end;
+
 procedure TForm4.ListView1Click(Sender: TObject);
 var
   mess: Message;
@@ -151,7 +157,7 @@ end;
 procedure TForm4.returnButtonClick(Sender: TObject);
 begin
   Form3.Show;
-  Form4.Close;
+  Form4.Hide;
 end;
 
 

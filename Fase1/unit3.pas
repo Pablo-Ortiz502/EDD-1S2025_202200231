@@ -39,7 +39,7 @@ type
         destructor Destroy; override;
         procedure add(aUser: User);
         function findEmail(aEmail: string): User;
-        function accesTo(aPassword,aUser: string): User;
+        function accesTo(aPassword,aEmail: string): User;
       end;
 
 implementation
@@ -118,14 +118,14 @@ implementation
           Result := nil;
        end;
 
-     function LinkedList.accesTo(aPassword,aUser: string): User;
+     function LinkedList.accesTo(aPassword,aEmail: string): User;
        var
          current: Node;
        begin
          current := head;
          while current <> nil do
            begin
-             if (current^.data.user = aUser) and (current^.data.password = aPassword) then
+             if (current^.data.Email = aEmail) and (current^.data.password = aPassword) then
                begin
                  Result := current^.data;
                  Exit;

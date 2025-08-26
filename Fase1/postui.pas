@@ -24,6 +24,7 @@ type
     Label4: TLabel;
     Label5: TLabel;
     procedure editButtonClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure returButtonClick(Sender: TObject);
     procedure telEditChange(Sender: TObject);
     procedure userEditChange(Sender: TObject);
@@ -32,6 +33,7 @@ type
   public
      procedure  setUser(u: User);
      procedure refresh;
+     procedure validation;
   end;
 
 var
@@ -42,6 +44,11 @@ implementation
  Uses
    circularL, Unit4;
 {$R *.lfm}
+procedure TForm7.validation;
+begin
+  Form7.editButton.Enabled:=(Trim(Form7.telEdit.Text)<>'')and(Trim(Form7.userEdit.Text)<>'');
+end;
+
 procedure TForm7.refresh;
 begin
    Form7.nameEdit.Text := logUser.name;
@@ -54,15 +61,12 @@ end;
 procedure TForm7.returButtonClick(Sender: TObject);
 begin
   Form3.Show;
-  Form7.Close;
+  Form7.Hide;
 end;
 
 procedure TForm7.telEditChange(Sender: TObject);
 begin
-   if Form7.telEdit.Text <> '' then
-     Form7.editButton.Enabled := True
-   else
-     Form7.editButton.Enabled := False;
+  Form7.validation;
 end;
 
 
@@ -83,14 +87,14 @@ begin
   ShowMessage('Perfil acualizado Correctamente');
 end;
 
+procedure TForm7.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+begin
+  Application.Terminate;
+end;
+
 procedure TForm7.userEditChange(Sender: TObject);
 begin
-
-   if Form7.userEdit.Text <> '' then
-     Form7.editButton.Enabled := True
-   else
-     Form7.editButton.Enabled := False;
-
+   Form7.validation;
 end;
 
  procedure  TForm7.setUser(u: User);

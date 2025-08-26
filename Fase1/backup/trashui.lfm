@@ -6,6 +6,7 @@ object Form5: TForm5
   Caption = 'Form5'
   ClientHeight = 483
   ClientWidth = 639
+  OnClose = FormClose
   OnCreate = FormCreate
   object ListView1: TListView
     Left = 48

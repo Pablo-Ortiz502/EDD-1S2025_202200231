@@ -6,6 +6,7 @@ object Form2: TForm2
   Caption = 'Root'
   ClientHeight = 329
   ClientWidth = 320
+  OnClose = FormClose
   object Root: TLabel
     Left = 128
     Height = 34

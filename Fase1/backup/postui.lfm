@@ -8,6 +8,7 @@ object Form7: TForm7
   ClientWidth = 455
   Font.Height = -17
   Font.Name = 'Sans'
+  OnClose = FormClose
   object Label1: TLabel
     Left = 58
     Height = 21
@@ -41,11 +42,11 @@ object Form7: TForm7
     Height = 35
     Top = 112
     Width = 240
+    Enabled = False
     Font.Height = -15
     Font.Name = 'Sans'
     ParentFont = False
     TabOrder = 0
-    OnChange = nameEditChange
   end
   object userEdit: TEdit
     Left = 144
@@ -63,11 +64,11 @@ object Form7: TForm7
     Height = 35
     Top = 208
     Width = 240
+    Enabled = False
     Font.Height = -15
     Font.Name = 'Sans'
     ParentFont = False
     TabOrder = 2
-    OnChange = mailEditChange
   end
   object telEdit: TEdit
     Left = 144

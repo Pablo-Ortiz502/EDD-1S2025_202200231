@@ -71,10 +71,7 @@ begin
 
          end
        else
-         begin
           ShowMessage('No se encontro el usuario');
-          Form6.mailEdit.Text:='';
-         end;
       end
     else
      begin

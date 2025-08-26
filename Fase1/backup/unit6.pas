@@ -26,6 +26,7 @@ type
     dateLabel: TLabel;
     subjecLabel: TLabel;
     procedure discardButtonClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure ListView1Click(Sender: TObject);
     procedure returnButtonClick(Sender: TObject);
@@ -123,11 +124,15 @@ procedure TForm4.discardButtonClick(Sender: TObject);
 begin
   if (MessageDlg('Esta seguro de descartar el mensaje',mtWarning,[mbOk,mbCancel],0) = mrOk) then
     begin
-
     messList.deleteItem(i,bLogUser.trashList);
     ShowMessage('Mensaje Descartado');
     Form4.refreshList(listView1);
     end;
+end;
+
+procedure TForm4.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+begin
+  Application.Terminate;
 end;
 
 procedure TForm4.ListView1Click(Sender: TObject);
@@ -152,7 +157,7 @@ end;
 procedure TForm4.returnButtonClick(Sender: TObject);
 begin
   Form3.Show;
-  Form4.Close;
+  Form4.Hide;
 end;
 
 

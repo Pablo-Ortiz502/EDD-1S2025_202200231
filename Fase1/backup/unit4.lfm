@@ -1,12 +1,13 @@
 object Form3: TForm3
   Left = 248
-  Height = 560
+  Height = 592
   Top = 32
   Width = 298
   Caption = 'Form3'
-  ClientHeight = 560
+  ClientHeight = 592
   ClientWidth = 298
   Color = clSkyBlue
+  OnClose = FormClose
   object entryButton: TButton
     Left = 72
     Height = 25
@@ -61,7 +62,7 @@ object Form3: TForm3
   object postButton: TButton
     Left = 72
     Height = 25
-    Top = 384
+    Top = 432
     Width = 160
     Caption = 'Actualizar Perfil'
     TabOrder = 6
@@ -70,7 +71,7 @@ object Form3: TForm3
   object reportButton: TButton
     Left = 72
     Height = 25
-    Top = 432
+    Top = 480
     Width = 160
     Caption = 'Generar Reportes'
     TabOrder = 7
@@ -78,29 +79,40 @@ object Form3: TForm3
   object exitButton: TButton
     Left = 112
     Height = 25
-    Top = 488
+    Top = 536
     Width = 75
     Caption = 'Salir'
     TabOrder = 8
     OnClick = exitButtonClick
   end
   object Label1: TLabel
-    Left = 96
-    Height = 23
-    Top = 16
-    Width = 111
+    Left = 72
+    Height = 28
+    Top = 24
+    Width = 153
     Caption = 'Bienvienido'
-    Font.Height = -19
+    Font.Height = -23
     Font.Name = 'Sans'
+    Font.Style = [fsBold]
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 96
-    Height = 1
-    Top = 48
-    Width = 1
+    Left = 104
+    Height = 24
+    Top = 56
+    Width = 24
+    Caption = 'aa'
     Font.Height = -20
     Font.Name = 'Sans'
     ParentFont = False
+  end
+  object contactButton: TButton
+    Left = 72
+    Height = 25
+    Top = 384
+    Width = 160
+    Caption = 'Contactos'
+    TabOrder = 9
+    OnClick = contactButtonClick
   end
 end

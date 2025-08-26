@@ -1,0 +1,97 @@
+object Form9: TForm9
+  Left = 379
+  Height = 564
+  Top = 32
+  Width = 520
+  Caption = 'Form9'
+  ClientHeight = 564
+  ClientWidth = 520
+  OnClose = FormClose
+  object Label1: TLabel
+    Left = 168
+    Height = 29
+    Top = 24
+    Width = 183
+    Caption = 'Enviar Correo'
+    Font.Height = -24
+    Font.Name = 'Sans'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 24
+    Height = 23
+    Top = 96
+    Width = 122
+    Caption = 'Destinatiario'
+    Font.Height = -19
+    Font.Name = 'Sans'
+    ParentFont = False
+  end
+  object reciverEdit: TEdit
+    Left = 160
+    Height = 36
+    Top = 88
+    Width = 328
+    TabOrder = 0
+    OnChange = reciverEditChange
+  end
+  object Label3: TLabel
+    Left = 80
+    Height = 23
+    Top = 160
+    Width = 66
+    Caption = 'Asunto'
+    Font.Height = -19
+    Font.Name = 'Sans'
+    ParentFont = False
+  end
+  object subjectEdit: TEdit
+    Left = 160
+    Height = 36
+    Top = 152
+    Width = 328
+    TabOrder = 1
+    OnChange = subjectEditChange
+  end
+  object Label4: TLabel
+    Left = 24
+    Height = 23
+    Top = 224
+    Width = 79
+    Caption = 'Mensaje'
+    Font.Height = -19
+    Font.Name = 'Sans'
+    ParentFont = False
+  end
+  object messMemo: TMemo
+    Left = 24
+    Height = 162
+    Top = 264
+    Width = 464
+    Lines.Strings = (
+      'messMemo'
+    )
+    TabOrder = 2
+    OnChange = messMemoChange
+  end
+  object returnButton: TButton
+    Left = 56
+    Height = 41
+    Top = 472
+    Width = 115
+    Caption = 'Salir'
+    TabOrder = 3
+    OnClick = returnButtonClick
+  end
+  object sendButton: TButton
+    Left = 336
+    Height = 41
+    Top = 472
+    Width = 115
+    Caption = 'Enviar'
+    Enabled = False
+    TabOrder = 4
+    OnClick = sendButtonClick
+  end
+end

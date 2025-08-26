@@ -8,6 +8,7 @@ object Form7: TForm7
   ClientWidth = 455
   Font.Height = -17
   Font.Name = 'Sans'
+  OnClose = FormClose
   object Label1: TLabel
     Left = 58
     Height = 21

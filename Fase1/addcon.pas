@@ -18,6 +18,7 @@ type
     Label1: TLabel;
     Label2: TLabel;
     procedure addButtonClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure mailEditChange(Sender: TObject);
     procedure returnButtonClick(Sender: TObject);
   private
@@ -44,7 +45,7 @@ end;
 procedure TForm6.returnButtonClick(Sender: TObject);
 begin
   Form3.Show;
-  Form6.Close;
+  Form6.Hide;
 end;
 
 procedure TForm6.addButtonClick(Sender: TObject);
@@ -79,6 +80,11 @@ begin
       Form6.mailEdit.Text:='';
      end;
 
+end;
+
+procedure TForm6.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+begin
+  Application.Terminate;
 end;
 
 procedure TForm6.setUser(u:User);

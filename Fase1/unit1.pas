@@ -62,7 +62,7 @@ end;
 procedure TForm1.FormCreate(Sender: TObject);
 begin
   userList := LinkedList.create;
-    userList.add(User.create(1,41877278,'Pablo','1','1','prueba@gmail.com'));
+    userList.add(User.create(1,41877278,'Pablo','1','1','1'));
     userList.add(User.create(2,41877278,'Pablo','EliteDragon','1234','pablo@gmail.com'));
     userList.add(User.create(3,41877278,'Cesar','Elliwood','qwer','cesar@gmail.com'));
 end;

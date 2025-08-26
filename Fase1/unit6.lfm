@@ -2,25 +2,26 @@ object Form4: TForm4
   Left = 387
   Height = 428
   Top = 32
-  Width = 848
+  Width = 1103
   Caption = 'Form4'
   ClientHeight = 428
-  ClientWidth = 848
+  ClientWidth = 1103
+  OnClose = FormClose
   OnCreate = FormCreate
   object ListView1: TListView
     Left = 48
     Height = 256
     Top = 80
-    Width = 362
+    Width = 552
     Columns = <>
     ReadOnly = True
     TabOrder = 0
     OnClick = ListView1Click
   end
   object Label1: TLabel
-    Left = 464
+    Left = 616
     Height = 19
-    Top = 40
+    Top = 56
     Width = 84
     Caption = 'Emisario:'
     Font.Height = -16
@@ -29,9 +30,9 @@ object Form4: TForm4
     ParentFont = False
   end
   object senderLabel: TLabel
-    Left = 552
+    Left = 704
     Height = 19
-    Top = 40
+    Top = 56
     Width = 30
     Caption = 'aaa'
     Font.Height = -16
@@ -39,9 +40,9 @@ object Form4: TForm4
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 464
+    Left = 616
     Height = 19
-    Top = 72
+    Top = 88
     Width = 58
     Caption = 'Fecha:'
     Font.Height = -16
@@ -50,9 +51,9 @@ object Form4: TForm4
     ParentFont = False
   end
   object dateLabel: TLabel
-    Left = 528
+    Left = 680
     Height = 19
-    Top = 72
+    Top = 88
     Width = 30
     Caption = 'aaa'
     Font.Height = -16
@@ -60,9 +61,9 @@ object Form4: TForm4
     ParentFont = False
   end
   object Label3: TLabel
-    Left = 464
+    Left = 616
     Height = 19
-    Top = 104
+    Top = 120
     Width = 69
     Caption = 'Asunto:'
     Font.Height = -16
@@ -71,9 +72,9 @@ object Form4: TForm4
     ParentFont = False
   end
   object subjecLabel: TLabel
-    Left = 536
+    Left = 688
     Height = 19
-    Top = 104
+    Top = 120
     Width = 30
     Caption = 'aaa'
     Font.Height = -16
@@ -81,9 +82,9 @@ object Form4: TForm4
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 464
+    Left = 616
     Height = 19
-    Top = 136
+    Top = 152
     Width = 81
     Caption = 'Mensaje:'
     Font.Height = -16
@@ -92,10 +93,10 @@ object Form4: TForm4
     ParentFont = False
   end
   object messageMemo: TMemo
-    Left = 464
+    Left = 616
     Height = 176
-    Top = 160
-    Width = 328
+    Top = 176
+    Width = 448
     Enabled = False
     Lines.Strings = (
       'messageMemo'
@@ -123,9 +124,9 @@ object Form4: TForm4
     OnClick = returnButtonClick
   end
   object discardButton: TButton
-    Left = 648
+    Left = 920
     Height = 32
-    Top = 352
+    Top = 360
     Width = 144
     Caption = 'Enviar a papelera'
     Color = clRed

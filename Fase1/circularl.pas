@@ -23,6 +23,7 @@ type
     TNode = record
       data: Contact;
       next: CNode;
+      prev: CNode;
     end;
 
 
@@ -72,25 +73,24 @@ implementation
 
       procedure CircularList.add(aContact: Contact);
         var
-          newNode, current: CNode;
+          newNode, last: CNode;
         begin
           New(newNode);
           newNode^.data := aContact;
-          newNode^.next := head;
 
           if head = nil then
            begin
             head := newNode;
-            newNode^.next:= head;
+            head^.next:= head;
+            head^.prev := head;
            end
           else
             begin
-              current := head;
-              while current^.next <> head do
-                current := current^.next;
-              current^.next := newNode;
+              last := head^.prev;
               newNode^.next := head;
-
+              newNode^.prev := last;
+              last^.next := newNode;
+              head^.prev := newNode;
             end;
         end;
 

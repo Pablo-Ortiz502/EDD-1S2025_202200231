@@ -38,7 +38,6 @@ type
         constructor create;
         destructor Destroy; override;
         procedure add(aUser: User);
-        procedure print;
         function findEmail(aEmail: string): User;
         function accesTo(aPassword,aUser: string): User;
       end;
@@ -102,19 +101,6 @@ implementation
         end;
 
 
-      procedure LinkedList.print;
-       var
-         current: Node;
-       begin
-         current := head;
-         while current <> nil do
-           begin
-             Writeln('Email: ',current^.data.Email,'Nombre: ',current^.data.Name, '--->');
-             current := current^.next;
-           end;
-       end;
-
-
      function LinkedList.findEmail(aEmail: string): User;
        var
          current: Node;
@@ -139,7 +125,7 @@ implementation
          current := head;
          while current <> nil do
            begin
-             if (current^.data.user = aUser) and (current^.data.password = aPassword) then
+             if (current^.data.Email = aUser) and (current^.data.password = aPassword) then
                begin
                  Result := current^.data;
                  Exit;
