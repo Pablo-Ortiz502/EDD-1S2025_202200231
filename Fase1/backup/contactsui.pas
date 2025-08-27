@@ -25,6 +25,7 @@ type
     telEdit: TEdit;
     userEdit: TEdit;
     procedure backButtonClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure forwButtonClick(Sender: TObject);
     procedure returButtonClick(Sender: TObject);
   private
@@ -51,13 +52,18 @@ end;
 procedure TForm8.returButtonClick(Sender: TObject);
 begin
   Form3.Show;
-  Form8.Close;
+  Form8.Hide;
 end;
 
 procedure TForm8.backButtonClick(Sender: TObject);
 begin
   current := current^.prev;
   Form8.refresh;
+end;
+
+procedure TForm8.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+begin
+  Application.Terminate;
 end;
 
   procedure TForm8.setUser(u: User);

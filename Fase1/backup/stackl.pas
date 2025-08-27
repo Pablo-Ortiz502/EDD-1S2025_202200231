@@ -9,8 +9,8 @@ uses
 
 type
 
-    KNode = ^TNode;
-    TNode = record
+    KNode = ^mNode;
+    mNode = record
       data: Message;
       next: KNode;
     end;
@@ -68,7 +68,7 @@ implementation
         var
           newNode, current: KNode;
         begin
-          New(newNode); //hace que el apuntador vaya a un espacio de memoria libre
+          New(newNode);
           newNode^.data := trashed;
           newNode^.next := nil;
 

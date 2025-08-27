@@ -1,0 +1,129 @@
+object Form10: TForm10
+  Left = 387
+  Height = 528
+  Top = 32
+  Width = 630
+  Caption = 'Form10'
+  ClientHeight = 528
+  ClientWidth = 630
+  object Label1: TLabel
+    Left = 216
+    Height = 29
+    Top = 24
+    Width = 183
+    Caption = 'Enviar Correo'
+    Font.Height = -24
+    Font.Name = 'Sans'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 72
+    Height = 23
+    Top = 96
+    Width = 122
+    Caption = 'Destinatiario'
+    Font.Height = -19
+    Font.Name = 'Sans'
+    ParentFont = False
+  end
+  object reciverEdit: TEdit
+    Left = 208
+    Height = 36
+    Top = 88
+    Width = 328
+    TabOrder = 0
+    OnChange = reciverEditChange
+  end
+  object Label3: TLabel
+    Left = 128
+    Height = 23
+    Top = 160
+    Width = 66
+    Caption = 'Asunto'
+    Font.Height = -19
+    Font.Name = 'Sans'
+    ParentFont = False
+  end
+  object subjectEdit: TEdit
+    Left = 208
+    Height = 36
+    Top = 152
+    Width = 328
+    TabOrder = 1
+    OnChange = subjectEditChange
+  end
+  object Label4: TLabel
+    Left = 72
+    Height = 23
+    Top = 224
+    Width = 79
+    Caption = 'Mensaje'
+    Font.Height = -19
+    Font.Name = 'Sans'
+    ParentFont = False
+  end
+  object messMemo: TMemo
+    Left = 72
+    Height = 162
+    Top = 264
+    Width = 464
+    Lines.Strings = (
+      'messMemo'
+    )
+    TabOrder = 2
+    OnChange = messMemoChange
+  end
+  object returnButton: TButton
+    Left = 104
+    Height = 41
+    Top = 472
+    Width = 115
+    Caption = 'Salir'
+    TabOrder = 3
+    OnClick = returnButtonClick
+  end
+  object sendButton: TButton
+    Left = 384
+    Height = 41
+    Top = 472
+    Width = 115
+    Caption = 'Enviar'
+    Enabled = False
+    TabOrder = 4
+    OnClick = sendButtonClick
+  end
+  object datePicker: TDateTimePicker
+    Left = 368
+    Height = 25
+    Top = 222
+    Width = 105
+    CenturyFrom = 1941
+    DateDisplayOrder = ddoDMY
+    MaxDate = 2958465
+    MinDate = 45817
+    TabOrder = 5
+    TrailingSeparator = False
+    TextForNullDate = 'NULL'
+    LeadingZeros = True
+    Kind = dtkDate
+    TimeFormat = tf24
+    TimeDisplay = tdHM
+    DateMode = dmComboBox
+    Date = 45895
+    Time = 0.74657542823843
+    UseDefaultSeparators = True
+    HideDateTimeParts = []
+    MonthNames = 'Long'
+  end
+  object Label5: TLabel
+    Left = 304
+    Height = 23
+    Top = 224
+    Width = 56
+    Caption = 'Fecha'
+    Font.Height = -19
+    Font.Name = 'Sans'
+    ParentFont = False
+  end
+end

@@ -2,10 +2,11 @@ object Form4: TForm4
   Left = 387
   Height = 428
   Top = 32
-  Width = 996
+  Width = 1103
   Caption = 'Form4'
   ClientHeight = 428
-  ClientWidth = 996
+  ClientWidth = 1103
+  LCLVersion = '4.2.0.0'
   OnClose = FormClose
   OnCreate = FormCreate
   object ListView1: TListView
@@ -96,7 +97,7 @@ object Form4: TForm4
     Left = 616
     Height = 176
     Top = 176
-    Width = 328
+    Width = 448
     Enabled = False
     Lines.Strings = (
       'messageMemo'
@@ -124,9 +125,9 @@ object Form4: TForm4
     OnClick = returnButtonClick
   end
   object discardButton: TButton
-    Left = 800
+    Left = 920
     Height = 32
-    Top = 368
+    Top = 360
     Width = 144
     Caption = 'Enviar a papelera'
     Color = clRed

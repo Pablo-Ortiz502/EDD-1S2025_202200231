@@ -61,7 +61,7 @@ begin
    re := logUser.contactList.findEmail(Form9.reciverEdit.Text);
    if re <> nil then
    begin
-      dateA := FormatDateTime('dd/mm/yy  hh:nn',Now);
+      dateA := FormatDateTime('dd/mm/yyyy  hh:nn',Now);
       Form1.userList.findEmail(re.Email).messListU.add(Message.create(dateA,logUser.Email,Form9.subjectEdit.Text,Form9.messMemo.Text,False));
       Form9.refresh;
       ShowMessage('Mensaje enviado con exito');

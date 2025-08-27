@@ -6,6 +6,7 @@ object Form4: TForm4
   Caption = 'Form4'
   ClientHeight = 428
   ClientWidth = 1103
+  LCLVersion = '4.2.0.0'
   OnClose = FormClose
   OnCreate = FormCreate
   object ListView1: TListView

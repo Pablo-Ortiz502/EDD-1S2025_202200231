@@ -6,8 +6,8 @@ interface
 Uses stackL,MessageClasss;
 type
 
-    DNode = ^TNode;
-    TNode = record
+    DNode = ^qNode;
+    qNode = record
       data: Message;
       next: DNode;
       prev: DNode;

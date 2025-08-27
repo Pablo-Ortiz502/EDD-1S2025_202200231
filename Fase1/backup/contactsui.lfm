@@ -6,6 +6,7 @@ object Form8: TForm8
   Caption = 'Form8'
   ClientHeight = 431
   ClientWidth = 427
+  OnClose = FormClose
   object Label1: TLabel
     Left = 42
     Height = 19

@@ -129,7 +129,7 @@ end;
 
 procedure TForm5.findButtonClick(Sender: TObject);
 begin
-  messList := tLogUser.trashList.findBySubject(Form5.findEdit.Text);       // arreglar el metodo no filtra
+  messList := tLogUser.trashList.findBySubject(Form5.findEdit.Text);
   Form5.refreshList(ListView1);
 end;
 

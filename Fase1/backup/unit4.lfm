@@ -24,6 +24,7 @@ object Form3: TForm3
     Width = 160
     Caption = 'Enviar Correo'
     TabOrder = 1
+    OnClick = sedButtonClick
   end
   object trashButton: TButton
     Left = 72
@@ -41,6 +42,7 @@ object Form3: TForm3
     Width = 160
     Caption = 'Programar Correo'
     TabOrder = 3
+    OnClick = programButtonClick
   end
   object programedButton: TButton
     Left = 72

@@ -135,7 +135,7 @@ end;
 
 procedure TForm5.deleteButtonClick(Sender: TObject);
 begin
-  if (MessageDlg('Esta seguro de descartar el mensaje',mtWarning,[mbOk,mbCancel],0) = mrOk) then
+  if (MessageDlg('Esta seguro de ELIMINAR el mensaje (NO se podra recuperar)',mtWarning,[mbOk,mbCancel],0) = mrOk) then
     begin
       tLogUser.trashList.deleteById(Integer(ListView1.Selected.Data));
       ShowMessage('Mensaje Descartado');

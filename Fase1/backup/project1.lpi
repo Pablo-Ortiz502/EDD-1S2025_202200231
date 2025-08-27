@@ -25,6 +25,12 @@
     </RunParams>
     <RequiredPackages>
       <Item>
+        <PackageName Value="DateTimeCtrlsDsgn"/>
+      </Item>
+      <Item>
+        <PackageName Value="DateTimeCtrls"/>
+      </Item>
+      <Item>
         <PackageName Value="LCL"/>
       </Item>
     </RequiredPackages>
@@ -118,6 +124,7 @@
         <Filename Value="contactsui.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form8"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="contactsUI"/>
       </Unit>
@@ -125,8 +132,28 @@
         <Filename Value="sendui.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form9"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="sendUI"/>
+      </Unit>
+      <Unit>
+        <Filename Value="progui.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form10"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="progUI"/>
+      </Unit>
+      <Unit>
+        <Filename Value="queul.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="queuL"/>
+      </Unit>
+      <Unit>
+        <Filename Value="programedui.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form11"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="programedUI"/>
       </Unit>
     </Units>
   </ProjectOptions>

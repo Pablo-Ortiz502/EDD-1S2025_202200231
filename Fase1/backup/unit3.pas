@@ -39,11 +39,12 @@ type
         destructor Destroy; override;
         procedure add(aUser: User);
         function findEmail(aEmail: string): User;
-        function accesTo(aPassword,aUser: string): User;
+        function accesTo(aPassword,aEmail: string): User;
+        procedure post(u: User);
       end;
 
 implementation
-
+ Uses Unit1;
 {User}
       constructor User.create(aId, aTel: Integer; aName,aUser,aPassword,aEmail: string);
       begin
@@ -118,14 +119,14 @@ implementation
           Result := nil;
        end;
 
-     function LinkedList.accesTo(aPassword,aUser: string): User;
+     function LinkedList.accesTo(aPassword,aEmail: string): User;
        var
          current: Node;
        begin
          current := head;
          while current <> nil do
            begin
-             if (current^.data.Email = aUser) and (current^.data.password = aPassword) then
+             if (current^.data.Email = aEmail) and (current^.data.password= aPassword) then
                begin
                  Result := current^.data;
                  Exit;
@@ -134,5 +135,20 @@ implementation
            end;
           Result := nil;
        end;
+
+     procedure LinkedList.post(u: User);
+      var
+        current: Node;
+      begin
+        current := Form1.userList.aHead;
+        while current <> nil do
+          begin
+              if current^.data.contactList.findEmail(u.Email) <> nil then
+                  current^.data.contactList.findEmail(u.Email).user:=u.user;
+              current := current^.next
+          end;
+
+      end;
+
 end.
 

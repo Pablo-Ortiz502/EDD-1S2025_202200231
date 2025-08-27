@@ -9,8 +9,8 @@ uses
 
 type
 
-    KNode = ^TNode;
-    TNode = record
+    KNode = ^mNode;
+    mNode = record
       data: Message;
       next: KNode;
     end;
@@ -81,7 +81,7 @@ implementation
                 current := current^.next;
               current^.next := newNode;
             end;
-        end;
+      end;
 
 
 

@@ -31,6 +31,8 @@ type
     procedure exitButtonClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure postButtonClick(Sender: TObject);
+    procedure programButtonClick(Sender: TObject);
+    procedure sedButtonClick(Sender: TObject);
     procedure trashButtonClick(Sender: TObject);
 
   private
@@ -43,7 +45,7 @@ var
   Form3: TForm3;
 implementation
 
-uses Unit1,Unit6,trashUI,addCon,postUI,contactsUI;
+uses Unit1,Unit6,trashUI,addCon,postUI,contactsUI,sendUI,progUI;
 {$R *.lfm}
 
 { TForm3 }
@@ -71,6 +73,20 @@ procedure TForm3.postButtonClick(Sender: TObject);
 begin
    Form7.Show;
    Form7.setUser(aLogUser);
+   Form3.Hide;
+end;
+
+procedure TForm3.programButtonClick(Sender: TObject);
+begin
+  Form10.Show;
+  Form10.setUser(aLogUser);
+  Form3.Hide;
+end;
+
+procedure TForm3.sedButtonClick(Sender: TObject);
+begin
+   Form9.Show;
+   Form9.setUser(aLogUser);
    Form3.Hide;
 end;
 

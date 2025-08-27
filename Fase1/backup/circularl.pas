@@ -19,8 +19,8 @@ type
     end;
 
 
-    CNode = ^TNode;
-    TNode = record
+    CNode = ^PNode;
+    PNode = record
       data: Contact;
       next: CNode;
       prev: CNode;
@@ -31,7 +31,7 @@ type
       private
         head: CNode;
       public
-        property aHead: CNode read head write head;
+        property bHead: CNode read head write head;
         constructor create;
         destructor Destroy; override;
         procedure add(aContact: Contact);
@@ -73,7 +73,7 @@ implementation
 
       procedure CircularList.add(aContact: Contact);
         var
-          newNode, current: CNode;
+          newNode, last: CNode;
         begin
           New(newNode);
           newNode^.data := aContact;
@@ -86,10 +86,10 @@ implementation
            end
           else
             begin
-              current := head^.prev;
+              last := head^.prev;
               newNode^.next := head;
-              newNode^.prev := current;
-              current^.next := newNode;
+              newNode^.prev := last;
+              last^.next := newNode;
               head^.prev := newNode;
             end;
         end;

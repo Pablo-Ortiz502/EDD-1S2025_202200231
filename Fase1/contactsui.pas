@@ -69,7 +69,7 @@ end;
   procedure TForm8.setUser(u: User);
   begin
     logUser := u;
-    current := logUser.contactList.aHead;
+    current := logUser.contactList.bHead;
     Form8.refresh;
   end;
 

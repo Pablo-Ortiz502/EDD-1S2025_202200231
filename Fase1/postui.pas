@@ -24,7 +24,7 @@ type
     Label4: TLabel;
     Label5: TLabel;
     procedure editButtonClick(Sender: TObject);
-    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure FormClose(Sender: TObject);
     procedure returButtonClick(Sender: TObject);
     procedure telEditChange(Sender: TObject);
     procedure userEditChange(Sender: TObject);
@@ -42,7 +42,7 @@ var
 implementation
 
  Uses
-   circularL, Unit4;
+    Unit4, Unit1;
 {$R *.lfm}
 procedure TForm7.validation;
 begin
@@ -83,11 +83,12 @@ begin
        Exit;
      end;
   logUser.user:= Form7.userEdit.Text;
+  Form1.userList.post(logUser);
   Form7.refresh;
   ShowMessage('Perfil acualizado Correctamente');
 end;
 
-procedure TForm7.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+procedure TForm7.FormClose(Sender: TObject);
 begin
   Application.Terminate;
 end;

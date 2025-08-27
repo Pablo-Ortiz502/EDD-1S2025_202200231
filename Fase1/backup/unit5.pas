@@ -6,8 +6,8 @@ interface
 Uses stackL,MessageClasss;
 type
 
-    DNode = ^TNode;
-    TNode = record
+    DNode = ^kNode;
+    kNode = record
       data: Message;
       next: DNode;
       prev: DNode;
@@ -63,7 +63,7 @@ implementation
                   if current = head then
                     begin
                       head := head^.next;
-                      current^.data.Free;
+                      trashL.append(current^.data);
                       Dispose(current);
                       Exit;
                     end;

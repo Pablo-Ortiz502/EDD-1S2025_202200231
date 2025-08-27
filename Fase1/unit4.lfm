@@ -42,6 +42,7 @@ object Form3: TForm3
     Width = 160
     Caption = 'Programar Correo'
     TabOrder = 3
+    OnClick = programButtonClick
   end
   object programedButton: TButton
     Left = 72
@@ -50,6 +51,7 @@ object Form3: TForm3
     Width = 160
     Caption = 'Correos programados'
     TabOrder = 4
+    OnClick = programedButtonClick
   end
   object addCButton: TButton
     Left = 72

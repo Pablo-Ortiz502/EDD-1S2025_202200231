@@ -19,8 +19,8 @@ type
     end;
 
 
-    CNode = ^TNode;
-    TNode = record
+    CNode = ^PNode;
+    PNode = record
       data: Contact;
       next: CNode;
       prev: CNode;
@@ -31,7 +31,7 @@ type
       private
         head: CNode;
       public
-        property aHead: CNode read head write head;
+        property bHead: CNode read head write head;
         constructor create;
         destructor Destroy; override;
         procedure add(aContact: Contact);

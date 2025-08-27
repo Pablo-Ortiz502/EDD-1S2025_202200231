@@ -55,8 +55,6 @@ procedure TForm4.setUser(u:User);
 begin
   bLogUser := u;
   messList := bLogUser.messListU;
-  messList.add(Message.create('1/1/1','carlos@gmail.com','saludo','hola amigo',False));
-  messList.add(Message.create('1/12/1','pablo@gmail.com','despedida','adions',False));
   Form4.refreshList(listView1);
 end;
 
