@@ -21,6 +21,7 @@ type
     procedure exitButtonClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure loadButtonClick(Sender: TObject);
+    procedure repUserBClick(Sender: TObject);
   private
 
   public
@@ -60,6 +61,12 @@ begin
     ShowMessage('Archivo cargado correctamente')
   end;
 
+end;
+
+procedure TForm2.repUserBClick(Sender: TObject);
+begin
+  Form1.userList.userReport('Users_report','Users_report');
+  ShowMessage('Reportes creados')
 end;
 
 end.

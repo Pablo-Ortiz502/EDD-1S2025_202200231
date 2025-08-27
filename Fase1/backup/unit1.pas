@@ -71,6 +71,7 @@ end;
 procedure TForm1.createButtonClick(Sender: TObject);
 begin
    Form12.Show;
+   Form12.setE;
    Form1.Hide;
 end;
 

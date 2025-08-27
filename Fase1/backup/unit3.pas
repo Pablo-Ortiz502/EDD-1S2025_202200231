@@ -5,7 +5,7 @@ unit Unit3;
 interface
 
 uses
-  Classes, SysUtils, Unit5,stackL,circularL,queuL;
+  Classes, SysUtils, Unit5,stackL,circularL,queuL,Process;
 
 type
 
@@ -43,6 +43,7 @@ type
         function accesTo(aPassword,aEmail: string): User;
         procedure post(u: User);
         function idCount: Integer;
+        procedure userReport(const FileName: string);
       end;
 
 implementation
@@ -96,10 +97,8 @@ implementation
 
           if current = nil then
             Result := -1
-            Exit
           else
             Result := current^.data.id + 1;
-            Exit;
         end;
 
       procedure LinkedList.add(aUser: User);
@@ -170,6 +169,65 @@ implementation
           end;
 
       end;
+
+     procedure LinkedList.userReport(const FileName: string);
+      var
+        f: TextFile;
+        current: Node;
+        folder, dotFile, pngFile: string;
+        AProcess: TProcess;
+      begin
+        folder := 'user_report';
+        if not DirectoryExists(folder) then
+          CreateDir(folder);
+
+        dotFile := folder + '/' + FileName + '.dot';
+        pngFile := folder + '/' + FileName + '.png';
+
+        AssignFile(f, dotFile);
+        Rewrite(f);
+
+        try
+          Writeln(f, 'digraph G {');
+          Writeln(f, '  node [shape=record, style=filled, fillcolor=lightblue];');
+          Writeln(f, '  rankdir=LR;');
+
+          current := head;
+          while current <> nil do
+          begin
+            Writeln(f, '  "', current^.data.Email, '" [label="',
+              'ID: ', current^.data.id, '\n',
+              'Nombre: ', current^.data.name, '\n',
+              'Usuario: ', current^.data.user, '\n',
+              'Email: ', current^.data.Email, '\n',
+              'Tel: ', current^.data.tel, '"];');
+
+            if current^.next <> nil then
+              Writeln(f, '  "', current^.data.Email, '" -> "', current^.next^.data.Email, '";');
+
+            current := current^.next;
+          end;
+
+          Writeln(f, '}');
+        finally
+          CloseFile(f);
+        end;
+
+
+        AProcess := TProcess.Create(nil);
+        try
+          AProcess.Executable := 'dot';
+          AProcess.Parameters.Add('-Tpng');
+          AProcess.Parameters.Add(dotFile);
+          AProcess.Parameters.Add('-o');
+          AProcess.Parameters.Add(pngFile);
+          AProcess.Options := AProcess.Options + [poWaitOnExit];
+          AProcess.Execute;
+        finally
+          AProcess.Free;
+        end;
+      end;
+
 
 end.
 

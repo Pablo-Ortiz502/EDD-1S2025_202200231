@@ -6,6 +6,8 @@ object Form2: TForm2
   Caption = 'Root'
   ClientHeight = 329
   ClientWidth = 320
+  Color = clMoneyGreen
+  LCLVersion = '4.2.0.0'
   OnClose = FormClose
   object Root: TLabel
     Left = 128
@@ -33,6 +35,7 @@ object Form2: TForm2
     Width = 168
     Caption = 'Reporte de Usuarios'
     TabOrder = 1
+    OnClick = repUserBClick
   end
   object repReB: TButton
     Left = 80
