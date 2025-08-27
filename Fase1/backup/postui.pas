@@ -42,7 +42,7 @@ var
 implementation
 
  Uses
-    Unit4, Unit1,MessageClasss;
+    Unit4, Unit1;
 {$R *.lfm}
 procedure TForm7.validation;
 begin

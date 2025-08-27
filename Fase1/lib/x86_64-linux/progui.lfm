@@ -95,9 +95,9 @@ object Form10: TForm10
   end
   object datePicker: TDateTimePicker
     Left = 368
-    Height = 25
+    Height = 27
     Top = 222
-    Width = 105
+    Width = 107
     CenturyFrom = 1941
     DateDisplayOrder = ddoDMY
     MaxDate = 2958465

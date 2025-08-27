@@ -140,6 +140,7 @@
         <Filename Value="progui.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form10"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="progUI"/>
       </Unit>
@@ -152,8 +153,16 @@
         <Filename Value="programedui.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form11"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="programedUI"/>
+      </Unit>
+      <Unit>
+        <Filename Value="createui.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form12"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="createUI"/>
       </Unit>
     </Units>
   </ProjectOptions>

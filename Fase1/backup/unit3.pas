@@ -5,7 +5,7 @@ unit Unit3;
 interface
 
 uses
-  Classes, SysUtils, Unit5,stackL,circularL;
+  Classes, SysUtils, Unit5,stackL,circularL,queuL;
 
 type
 
@@ -19,6 +19,7 @@ type
         messListU : DoubleList;
         trashList: StackList;
         contactList: CircularList;
+        programList: QueuList;
         constructor create(aId, aTel: Integer; aName,aUser,aPassword,aEmail: string);
     end;
 
@@ -41,6 +42,7 @@ type
         function findEmail(aEmail: string): User;
         function accesTo(aPassword,aEmail: string): User;
         procedure post(u: User);
+        function idCount: Integer;
       end;
 
 implementation
@@ -57,10 +59,12 @@ implementation
         MessListU := DoubleList.create;
         trashList := StackList.create;
         contactList := CircularList.create;
+        programList := QueuList.create;
       end;
 
 
 {LinkedList}
+
       constructor LinkedList.create;
         begin
           head := nil;
@@ -80,6 +84,23 @@ implementation
             inherited;
         end;
 
+
+      function LinkedList.idCount: Integer;
+        var
+          current: Node;
+        begin
+          current := head;
+
+          while current^.next <> nil do
+            current := current^.next;
+
+          if current = nil then
+            Result := -1
+            Exit
+          else
+            Result := current^.data.id + 1;
+            Exit;
+        end;
 
       procedure LinkedList.add(aUser: User);
         var

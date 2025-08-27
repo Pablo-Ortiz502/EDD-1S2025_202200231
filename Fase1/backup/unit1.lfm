@@ -36,7 +36,7 @@ object Form1: TForm1
     TabOrder = 1
   end
   object logButton: TButton
-    Left = 48
+    Left = 32
     Height = 41
     Top = 232
     Width = 128
@@ -51,5 +51,6 @@ object Form1: TForm1
     Width = 128
     Caption = 'Crear usuario'
     TabOrder = 3
+    OnClick = createButtonClick
   end
 end

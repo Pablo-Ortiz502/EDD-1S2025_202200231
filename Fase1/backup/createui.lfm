@@ -1,0 +1,144 @@
+object Form12: TForm12
+  Left = 248
+  Height = 494
+  Top = 32
+  Width = 474
+  Caption = 'Form12'
+  ClientHeight = 494
+  ClientWidth = 474
+  OnClose = FormClose
+  object Label1: TLabel
+    Left = 66
+    Height = 21
+    Top = 136
+    Width = 74
+    Caption = 'Nombre:'
+    Font.Height = -17
+    Font.Name = 'Sans'
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 66
+    Height = 21
+    Top = 184
+    Width = 70
+    Caption = 'Usuario:'
+    Font.Height = -17
+    Font.Name = 'Sans'
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 64
+    Height = 21
+    Top = 232
+    Width = 62
+    Caption = 'Correo:'
+    Font.Height = -17
+    Font.Name = 'Sans'
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 64
+    Height = 21
+    Top = 280
+    Width = 75
+    Caption = 'Telefono:'
+    Font.Height = -17
+    Font.Name = 'Sans'
+    ParentFont = False
+  end
+  object nameEdit: TEdit
+    Left = 152
+    Height = 35
+    Top = 128
+    Width = 240
+    Font.Height = -15
+    Font.Name = 'Sans'
+    ParentFont = False
+    TabOrder = 0
+    OnChange = nameEditChange
+  end
+  object userEdit: TEdit
+    Left = 152
+    Height = 35
+    Top = 176
+    Width = 240
+    Font.Height = -15
+    Font.Name = 'Sans'
+    ParentFont = False
+    TabOrder = 1
+    OnChange = userEditChange
+  end
+  object mailEdit: TEdit
+    Left = 152
+    Height = 35
+    Top = 224
+    Width = 240
+    Font.Height = -15
+    Font.Name = 'Sans'
+    ParentFont = False
+    TabOrder = 2
+    OnChange = mailEditChange
+  end
+  object telEdit: TEdit
+    Left = 152
+    Height = 35
+    Top = 272
+    Width = 240
+    Font.Height = -15
+    Font.Name = 'Sans'
+    ParentFont = False
+    TabOrder = 3
+    OnChange = telEditChange
+  end
+  object Label5: TLabel
+    Left = 168
+    Height = 29
+    Top = 48
+    Width = 154
+    Caption = 'Crear Perfil'
+    Font.Height = -24
+    Font.Name = 'Sans'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object returButton: TButton
+    Left = 64
+    Height = 41
+    Top = 408
+    Width = 104
+    Caption = 'Regresar'
+    TabOrder = 4
+  end
+  object createButton: TButton
+    Left = 288
+    Height = 41
+    Top = 408
+    Width = 104
+    Caption = 'Crear'
+    Enabled = False
+    TabOrder = 5
+    OnClick = createButtonClick
+  end
+  object passEdit: TEdit
+    Left = 152
+    Height = 35
+    Top = 320
+    Width = 240
+    Font.Height = -15
+    Font.Name = 'Sans'
+    ParentFont = False
+    TabOrder = 6
+    OnChange = passEditChange
+  end
+  object Label6: TLabel
+    Left = 64
+    Height = 21
+    Top = 328
+    Width = 85
+    Caption = 'Password:'
+    Font.Height = -17
+    Font.Name = 'Sans'
+    ParentFont = False
+  end
+end

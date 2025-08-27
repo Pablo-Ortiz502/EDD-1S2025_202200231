@@ -42,6 +42,7 @@ type
         function findEmail(aEmail: string): User;
         function accesTo(aPassword,aEmail: string): User;
         procedure post(u: User);
+        function idCount: Integer;
       end;
 
 implementation
@@ -63,6 +64,7 @@ implementation
 
 
 {LinkedList}
+
       constructor LinkedList.create;
         begin
           head := nil;
@@ -82,6 +84,21 @@ implementation
             inherited;
         end;
 
+
+      function LinkedList.idCount: Integer;
+        var
+          current: Node;
+        begin
+          current := head;
+
+          while current^.next <> nil do
+            current := current^.next;
+
+          if current = nil then
+            Result := -1
+          else
+            Result := current^.data.id + 1;
+        end;
 
       procedure LinkedList.add(aUser: User);
         var

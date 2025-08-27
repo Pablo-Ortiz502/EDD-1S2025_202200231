@@ -19,6 +19,7 @@ type
     Label1: TLabel;
     Label2: TLabel;
     passEdit: TEdit;
+    procedure createButtonClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure logButtonClick(Sender: TObject);
   private
@@ -32,7 +33,7 @@ var
   Form1: TForm1;
 
 implementation
-  uses Unit2,Unit4;
+  uses Unit2,Unit4,createUI;
 {$R *.lfm}
 
 { TForm1 }
@@ -65,6 +66,13 @@ begin
     userList.add(User.create(1,41877278,'Pablo','1','1','1'));
     userList.add(User.create(2,41877278,'Pablo','EliteDragon','1234','pablo@gmail.com'));
     userList.add(User.create(3,41877278,'Cesar','Elliwood','qwer','cesar@gmail.com'));
+end;
+
+procedure TForm1.createButtonClick(Sender: TObject);
+begin
+   Form12.Show;
+   Form12.setE;
+   Form1.Hide;
 end;
 
 
