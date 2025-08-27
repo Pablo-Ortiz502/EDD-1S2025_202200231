@@ -12,7 +12,7 @@ uses
   Interfaces, // this includes the LCL widgetset
   Forms, Unit1, Unit2, Unit3, Unit4, Unit5, Unit6, circularL, stackL, 
 MessageClasss, trashUI, addCon, postUI, contactsUI, sendUI, 
-progUI, datetimectrls, queuL, programedUI, createUI
+progUI, datetimectrls, queuL, programedUI, createUI, userLoad
   { you can add units after this };
 
 {$R *.res}

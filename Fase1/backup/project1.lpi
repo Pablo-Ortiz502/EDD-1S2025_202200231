@@ -161,8 +161,14 @@
         <Filename Value="createui.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form12"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="createUI"/>
+      </Unit>
+      <Unit>
+        <Filename Value="userload.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="userLoad"/>
       </Unit>
     </Units>
   </ProjectOptions>
