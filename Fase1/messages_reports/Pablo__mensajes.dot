@@ -1,0 +1,4 @@
+digraph G {
+  node [shape=record, style=filled, fillcolor=lightblue];
+  rankdir=LR;
+}

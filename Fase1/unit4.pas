@@ -33,6 +33,7 @@ type
     procedure postButtonClick(Sender: TObject);
     procedure programButtonClick(Sender: TObject);
     procedure programedButtonClick(Sender: TObject);
+    procedure reportButtonClick(Sender: TObject);
     procedure sedButtonClick(Sender: TObject);
     procedure trashButtonClick(Sender: TObject);
 
@@ -46,7 +47,7 @@ var
   Form3: TForm3;
 implementation
 
-uses Unit1,Unit6,trashUI,addCon,postUI,contactsUI,sendUI,progUI,programedUI;
+uses Unit1,Unit6,trashUI,addCon,postUI,contactsUI,sendUI,progUI,programedUI,Unit5;
 {$R *.lfm}
 
 { TForm3 }
@@ -89,6 +90,15 @@ begin
   Form11.show;
   Form11.setUser(aLogUSer);
   Form3.Hide;
+end;
+
+procedure TForm3.reportButtonClick(Sender: TObject);
+begin
+   aLogUser.messListU.messageReport(aLogUser.name +'__mensajes' );
+   aLogUser.trashList.trashReport(aLogUser.name+'__Papelera');
+   aLogUser.programList.programReport(aLogUser.name +'__Programados');
+   aLogUser.contactList.contactReport(aLogUser.name+'__contactos');
+   ShowMessage('Reportes creados correctamente');
 end;
 
 procedure TForm3.sedButtonClick(Sender: TObject);

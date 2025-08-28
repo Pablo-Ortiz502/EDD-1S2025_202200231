@@ -1,0 +1,12 @@
+digraph G {
+rankdir=TB;
+  node [shape=record, style=filled, fillcolor=lightblue];
+  rankdir=LR;
+  "5" [label="Emisor: 1\nAsunto: LKKKKKKKKKKKKK\nFecha: 27/08/2025  20:01\nMensaje: DFGHGFDGGGGGGGGGGGGGGGGG"];
+  "5" -> "4";
+  "4" [label="Emisor: 1\nAsunto: DFASD\nFecha: 27/08/2025  20:00\nMensaje: SDAFSDFASDFASDG"];
+  "4" -> "3";
+  "3" [label="Emisor: 1\nAsunto: 23424\nFecha: 27/08/2025  20:00\nMensaje: SDAFASEFSADF"];
+  "3" -> "2";
+  "2" [label="Emisor: 1\nAsunto: DSFA\nFecha: 27/08/2025  20:00\nMensaje: SDAFSDFASDFSDFASDFSAF"];
+}

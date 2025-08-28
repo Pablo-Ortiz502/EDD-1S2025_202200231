@@ -1,0 +1,12 @@
+digraph G {
+  node [shape=record, style=filled, fillcolor=lightblue];
+  rankdir=LR;
+  "52" [label="ID: 52\nNombre: Cesar\nUsuario: Elliwood\nEmail: 2\nTel: 41877278"];
+  "52" -> "51"[dir=both];
+  "51" [label="ID: 51\nNombre: Pablo\nUsuario: EliteDragon\nEmail: pablo@gmail.com\nTel: 41877278"];
+  "51" -> "6"[dir=both];
+  "6" [label="ID: 6\nNombre: Brian Fox\nUsuario: bfox\nEmail: bfox@edd.com\nTel: 64578231"];
+  "6" -> "9"[dir=both];
+  "9" [label="ID: 9\nNombre: Mitchell Baker\nUsuario: mbaker\nEmail: mbaker@edd.com\nTel: 19384756"];
+  "9" -> "52"[dir=both];
+}

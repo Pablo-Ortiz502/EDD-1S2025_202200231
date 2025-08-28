@@ -65,7 +65,7 @@ begin
   userList := LinkedList.create;
     userList.add(User.create(50,41877278,'Pablo','1','1','1'));
     userList.add(User.create(51,41877278,'Pablo','EliteDragon','1234','pablo@gmail.com'));
-    userList.add(User.create(52,41877278,'Cesar','Elliwood','qwer','cesar@gmail.com'));
+    userList.add(User.create(52,41877278,'Cesar','Elliwood','2','2'));
 end;
 
 procedure TForm1.createButtonClick(Sender: TObject);

@@ -5,7 +5,7 @@ unit circularL;
 interface
 
 uses
-  Classes, SysUtils;
+  Classes, SysUtils, Process;
 
 type
 
@@ -36,6 +36,7 @@ type
         destructor Destroy; override;
         procedure add(aContact: Contact);
         function findEmail(aEmail: string): Contact;
+        procedure contactReport(const fileName: string);
       end;
 
 implementation
@@ -117,5 +118,67 @@ implementation
 
           Result := nil;
        end;
+
+      procedure CircularList.contactReport(const fileName: string);
+       var
+         f: TextFile;
+         current: CNode;
+         folder, dotFile, pngFile: string;
+         aProcess: TProcess;
+       begin
+         folder := 'contact_reports';
+         if not DirectoryExists(folder) then
+           CreateDir(folder);
+
+         dotFile := folder + '/' + fileName + '.dot';
+         pngFile := folder + '/' + fileName + '.png';
+
+         AssignFile(f, dotFile);
+         Rewrite(f);
+
+         try
+           Writeln(f, 'digraph G {');
+           Writeln(f, '  node [shape=record, style=filled, fillcolor=lightblue];');
+           Writeln(f, '  rankdir=LR;');
+
+           current := head;
+
+           if head <> nil then
+           begin
+           repeat
+             Writeln(f, '  "', current^.data.id, '" [label="',
+             'ID: ', current^.data.id, '\n',
+             'Nombre: ', current^.data.name, '\n',
+             'Usuario: ', current^.data.user, '\n',
+             'Email: ', current^.data.Email, '\n',
+             'Tel: ', current^.data.tel, '"];');
+
+             if current^.next <> nil then
+               Writeln(f, '  "', current^.data.id, '" -> "', current^.next^.data.id, '"[dir=both];');
+
+             current := current^.next;
+           until current = head;
+           end;
+           Writeln(f, '}');
+         finally
+           CloseFile(f);
+         end;
+
+
+         aProcess := TProcess.Create(nil);
+         try
+           aProcess.Executable := 'dot';
+           aProcess.Parameters.Add('-Tpng');
+           aProcess.Parameters.Add(dotFile);
+           aProcess.Parameters.Add('-o');
+           aProcess.Parameters.Add(pngFile);
+           aProcess.Options := aProcess.Options + [poWaitOnExit];
+           aProcess.Execute;
+         finally
+           aProcess.Free;
+         end;
+       end;
+
+
 end.
 

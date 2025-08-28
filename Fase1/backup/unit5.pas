@@ -3,11 +3,11 @@ unit Unit5;
 {$mode ObjFPC}{$H+}
 
 interface
-Uses stackL,MessageClasss;
+Uses stackL,MessageClasss,Process,SysUtils;
 type
 
-    DNode = ^kNode;
-    kNode = record
+    DNode = ^qNode;
+    qNode = record
       data: Message;
       next: DNode;
       prev: DNode;
@@ -25,6 +25,7 @@ type
         procedure add(aMessageS: Message);
         function findById(cId: Integer): Message;
         procedure deleteItem(cId: Integer; trashL: StackList);
+        procedure messageReport(const fileName: string);
       end;
 
 implementation
@@ -127,6 +128,66 @@ implementation
            end;
           Result := nil;
        end;
+
+
+     procedure DoubleList.messageReport(const fileName: string);
+      var
+        f: TextFile;
+        current: DNode;
+        folder, dotFile, pngFile: string;
+        aProcess: TProcess;
+      begin
+        folder := 'messages_reports';
+        if not DirectoryExists(folder) then
+          CreateDir(folder);
+
+        dotFile := folder + '/' + fileName + '.dot';
+        pngFile := folder + '/' + fileName + '.png';
+
+        AssignFile(f, dotFile);
+        Rewrite(f);
+
+        try
+          Writeln(f, 'digraph G {');
+          Writeln(f, '  node [shape=record, style=filled, fillcolor=lightblue];');
+          Writeln(f, '  rankdir=LR;');
+
+          current := head;
+          while current <> nil do
+          begin
+            Writeln(f, '  "', current^.data.id, '" [label="',
+              'Emisor: ', current^.data.sender, '\n',
+              'Asunto: ', current^.data.subject, '\n',
+              'Fecha: ', current^.data.date, '\n',
+              'Mensaje: ', current^.data.message, '"];');
+
+            if current^.next <> nil then
+              Writeln(f, '  "', current^.data.id, '" -> "', current^.next^.data.id, '";');
+            if current^.prev <> nil then
+              Writeln(f, '  "', current^.data.id, '" -> "', current^.prev^.data.id, '"[dir=back];');
+
+            current := current^.next;
+          end;
+
+          Writeln(f, '}');
+        finally
+          CloseFile(f);
+        end;
+
+
+        aProcess := TProcess.Create(nil);
+        try
+          aProcess.Executable := 'dot';
+          aProcess.Parameters.Add('-Tpng');
+          aProcess.Parameters.Add(dotFile);
+          aProcess.Parameters.Add('-o');
+          aProcess.Parameters.Add(pngFile);
+          aProcess.Options := aProcess.Options + [poWaitOnExit];
+          aProcess.Execute;
+        finally
+          aProcess.Free;
+        end;
+      end;
 
 end.
 

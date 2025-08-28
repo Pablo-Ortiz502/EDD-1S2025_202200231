@@ -7,6 +7,7 @@ object Form3: TForm3
   ClientHeight = 592
   ClientWidth = 298
   Color = clSkyBlue
+  LCLVersion = '4.2.0.0'
   OnClose = FormClose
   object entryButton: TButton
     Left = 72
@@ -51,6 +52,7 @@ object Form3: TForm3
     Width = 160
     Caption = 'Correos programados'
     TabOrder = 4
+    OnClick = programedButtonClick
   end
   object addCButton: TButton
     Left = 72
@@ -77,6 +79,7 @@ object Form3: TForm3
     Width = 160
     Caption = 'Generar Reportes'
     TabOrder = 7
+    OnClick = reportButtonClick
   end
   object exitButton: TButton
     Left = 112

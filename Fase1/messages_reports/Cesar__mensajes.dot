@@ -1,0 +1,7 @@
+digraph G {
+  node [shape=record, style=filled, fillcolor=lightblue];
+  rankdir=LR;
+  "0" [label="Emisor: 1\nAsunto: asdasd\nFecha: 27/08/2025  20:00\nMensaje: asdasdaD"];
+  "0" -> "1"[dir=both];
+  "1" [label="Emisor: 1\nAsunto: SFAFSDFSDF\nFecha: 27/08/2025  20:00\nMensaje: SFDFSDFSD"];
+}

@@ -195,15 +195,14 @@ implementation
           current := head;
           while current <> nil do
           begin
-            Writeln(f, '  "', current^.data.Email, '" [label="',
-              'ID: ', current^.data.id, '\n',
+            Writeln(f, '  "', current^.data.id, '" [label="',
               'Nombre: ', current^.data.name, '\n',
               'Usuario: ', current^.data.user, '\n',
               'Email: ', current^.data.Email, '\n',
               'Tel: ', current^.data.tel, '"];');
 
             if current^.next <> nil then
-              Writeln(f, '  "', current^.data.Email, '" -> "', current^.next^.data.Email, '";');
+              Writeln(f, '  "', current^.data.id, '" -> "', current^.next^.data.id, '";');
 
             current := current^.next;
           end;
