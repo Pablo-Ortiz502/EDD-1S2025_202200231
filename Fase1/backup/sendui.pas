@@ -39,7 +39,7 @@ var
   Form9: TForm9;
 
 implementation
-Uses Unit1,Unit4;
+Uses Unit1,Unit4,matrix;
 {$R *.lfm}
 
 procedure TForm9.reciverEditChange(Sender: TObject);
@@ -57,12 +57,18 @@ procedure TForm9.sendButtonClick(Sender: TObject);
 var
   re: Contact;
   dateA: string;
+  r: mNode;
+  i:Integer
 begin
    re := logUser.contactList.findEmail(Form9.reciverEdit.Text);
    if re <> nil then
    begin
-      dateA := FormatDateTime('dd/mm/yy  hh:nn',Now);
+      dateA := FormatDateTime('dd/mm/yyyy  hh:nn',Now);
       Form1.userList.findEmail(re.Email).messListU.add(Message.create(dateA,logUser.Email,Form9.subjectEdit.Text,Form9.messMemo.Text,False));
+      r := Form1.relations.FindNode(logUser.id,re.id);
+      i := r^.value;
+      Inc(i);
+      r^.value := i;
       Form9.refresh;
       ShowMessage('Mensaje enviado con exito');
    end

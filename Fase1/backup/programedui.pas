@@ -35,7 +35,7 @@ var
 
 implementation
 
-Uses Unit1,MessageClasss,circularL,Unit4;
+Uses Unit1,MessageClasss,circularL,Unit4,matrix;
 {$R *.lfm}
 
 procedure TForm11.setUSer(u:User);
@@ -52,7 +52,7 @@ begin
 
 with listView1.Columns.Add do
   begin
-    Caption := 'Emisario';
+    Caption := 'Receptor';
     AutoSize:= True;
   end;
 
@@ -92,6 +92,8 @@ var
   re: Contact;
   dateA: string;
   me: Message;
+  r: mNode;
+  i: Integer;
 begin
    re := logUser.contactList.findEmail(item.Caption);
    me := logUser.programList.findById(Integer(ListView1.Selected.Data));
@@ -99,6 +101,11 @@ begin
    begin
       dateA := FormatDateTime('dd/mm/yy  hh:nn',Now);
       Form1.userList.findEmail(re.Email).messListU.add(Message.create(dateA,logUser.Email,me.subject,me.message,False));
+      logUser.programList.removeById(Integer(ListView1.Selected.Data));
+      r := Form1.relations.FindNode(logUser.id,re.id)
+      i := r^.value;
+      Inc(i);
+      r^.value := i;
       Form11.refresh;
       ShowMessage('Mensaje enviado con exito');
 

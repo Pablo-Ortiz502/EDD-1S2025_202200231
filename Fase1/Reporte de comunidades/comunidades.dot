@@ -1,0 +1,11 @@
+digraph G {
+  rankdir=LR;
+  node [shape=record, style=filled, fontname="Helvetica"];
+  com0 [label=" com1", fillcolor=lightblue, shape=box];
+  com0_u0 [label="1", fillcolor=lightyellow, shape=box];
+  com0 -> com0_u0;
+  com0 -> com1;
+  com1 [label=" com2", fillcolor=lightblue, shape=box];
+  com1_u0 [label="1", fillcolor=lightyellow, shape=box];
+  com1 -> com1_u0;
+}

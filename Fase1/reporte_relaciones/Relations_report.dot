@@ -1,0 +1,27 @@
+digraph G {
+  rankdir=LR;
+  node [shape=box style=filled fontname="Arial"];
+  "C2" [label="jsdklfj@gmail.com" fillcolor=lightblue];
+  "C52" [label="2" fillcolor=lightblue];
+  "C50" [label="1" fillcolor=lightblue];
+  "C51" [label="pablo@gmail.com" fillcolor=lightblue];
+  "R1" [label="pablo@gmail.com" fillcolor=lightgreen];
+  "R50" [label="1" fillcolor=lightgreen];
+  "R52" [label="2" fillcolor=lightgreen];
+  "R51" [label="pablo@gmail.com" fillcolor=lightgreen];
+  "N1_2" [label="4" fillcolor=orange];
+  "R1" -> "N1_2";
+  "C2" -> "N1_2";
+  "N50_51" [label="1" fillcolor=orange];
+  "R50" -> "N50_51";
+  "C51" -> "N50_51";
+  "N50_52" [label="2" fillcolor=orange];
+  "R50" -> "N50_52";
+  "C52" -> "N50_52";
+  "N52_50" [label="1" fillcolor=orange];
+  "R52" -> "N52_50";
+  "C50" -> "N52_50";
+  "N51_50" [label="0" fillcolor=orange];
+  "R51" -> "N51_50";
+  "C50" -> "N51_50";
+}

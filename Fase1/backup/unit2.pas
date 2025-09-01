@@ -12,15 +12,18 @@ type
   { TForm2 }
 
   TForm2 = class(TForm)
+    comButton: TButton;
     loadButton: TButton;
     OpenDialog1: TOpenDialog;
     repUserB: TButton;
     repReB: TButton;
     exitButton: TButton;
     Root: TLabel;
+    procedure comButtonClick(Sender: TObject);
     procedure exitButtonClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure loadButtonClick(Sender: TObject);
+    procedure repReBClick(Sender: TObject);
     procedure repUserBClick(Sender: TObject);
   private
 
@@ -32,7 +35,7 @@ var
   Form2: TForm2;
 
 implementation
- uses Unit1, userLoad;
+ uses Unit1, userLoad,comuUi;
 
 {$R *.lfm}
 
@@ -45,6 +48,13 @@ implementation
    Form1.Show;
    Form2.Hide;
  end;
+
+procedure TForm2.comButtonClick(Sender: TObject);
+begin
+   Form14.Show;
+   Form14.refresh;
+   Form2.Hide;
+end;
 
 procedure TForm2.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
@@ -63,10 +73,16 @@ begin
 
 end;
 
+procedure TForm2.repReBClick(Sender: TObject);
+begin
+  Form1.relations.relationRerport('Relations_report');
+  ShowMessage('Reporte de relaciones creado')
+end;
+
 procedure TForm2.repUserBClick(Sender: TObject);
 begin
-  Form1.userList.userReport('Users_report','Users_report');
-  ShowMessage('Reportes creados')
+  Form1.userList.userReport('Users_report');
+  ShowMessage('Reporte de Usuarios creado.')
 end;
 
 end.

@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls,
-  ComCtrls, Menus, Unit3;
+  ComCtrls, Menus, Unit3, matrix;
 
 type
 
@@ -27,6 +27,7 @@ type
   public
     acc: User;
     userList: LinkedList;
+    relations: MatrixL;
   end;
 
 var
@@ -65,7 +66,9 @@ begin
   userList := LinkedList.create;
     userList.add(User.create(50,41877278,'Pablo','1','1','1'));
     userList.add(User.create(51,41877278,'Pablo','EliteDragon','1234','pablo@gmail.com'));
-    userList.add(User.create(52,41877278,'Cesar','Elliwood','qwer','cesar@gmail.com'));
+    userList.add(User.create(52,41877278,'Cesar','Elliwood','2','2'));
+  relations := MatrixL.create;
+  relations.Insert(1,2,4,'pablo@gmail.com','jsdklfj@gmail.com');
 end;
 
 procedure TForm1.createButtonClick(Sender: TObject);

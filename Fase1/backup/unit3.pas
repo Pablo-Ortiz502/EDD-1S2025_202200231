@@ -196,7 +196,6 @@ implementation
           while current <> nil do
           begin
             Writeln(f, '  "', current^.data.id, '" [label="',
-              'ID: ', current^.data.id, '\n',
               'Nombre: ', current^.data.name, '\n',
               'Usuario: ', current^.data.user, '\n',
               'Email: ', current^.data.Email, '\n',
