@@ -45,7 +45,7 @@ procedure TForm1.logButtonClick(Sender: TObject);
 begin
 
   acc := userList.accesTo(passEdit.Text, userEdit.Text);
-  if (userEdit.Text = 'admin') and (passEdit.Text = '123') then
+  if (userEdit.Text = 'root@edd.com') and (passEdit.Text = 'root123') then
      begin
      ShowMessage('Bienvenido');
      Form2.Show;
@@ -65,9 +65,9 @@ end;
 procedure TForm1.FormCreate(Sender: TObject);
 begin
   userList := LinkedList.create;
-    userList.add(User.create(50,41877278,'Pablo','1','1','1'));
-    userList.add(User.create(51,41877278,'Pablo','EliteDragon','1234','pablo@gmail.com'));
-    userList.add(User.create(52,41877278,'Cesar','Elliwood','2','2'));
+    userList.add(User.create(5000,41877278,'Pablo','1','1','1'));
+    userList.add(User.create(5100,41877278,'Pablo','EliteDragon','1234','pablo@gmail.com'));
+    userList.add(User.create(5200,41877278,'Cesar','Elliwood','2','2'));
   relations := MatrixL.create;
   relations.Insert(1,2,4,'pablo@gmail.com','jsdklfj@gmail.com');
   comunities := ListList.create;
