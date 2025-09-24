@@ -12,6 +12,7 @@ type
   { TForm2 }
 
   TForm2 = class(TForm)
+    messButton: TButton;
     comReportButton: TButton;
     comButton: TButton;
     loadButton: TButton;
@@ -25,6 +26,7 @@ type
     procedure exitButtonClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure loadButtonClick(Sender: TObject);
+    procedure messButtonClick(Sender: TObject);
     procedure repReBClick(Sender: TObject);
     procedure repUserBClick(Sender: TObject);
   private
@@ -37,7 +39,7 @@ var
   Form2: TForm2;
 
 implementation
- uses Unit1, userLoad,comuUi;
+ uses Unit1, userLoad,comuUi,MessLoader;
 
 {$R *.lfm}
 
@@ -76,6 +78,17 @@ begin
   if Form2.OpenDialog1.Execute then
   begin
     UserLoader.readFile(Form2.OpenDialog1.FileName,Form1.userList);
+    ShowMessage('Archivo cargado correctamente')
+  end;
+
+end;
+
+procedure TForm2.messButtonClick(Sender: TObject);
+begin
+  Form2.OpenDialog1.Filter:='JSON File|*.json|all|*.*';
+  if Form2.OpenDialog1.Execute then
+  begin
+    MessLoad.readFile(Form2.OpenDialog1.FileName);
     ShowMessage('Archivo cargado correctamente')
   end;
 

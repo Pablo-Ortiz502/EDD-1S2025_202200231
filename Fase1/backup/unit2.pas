@@ -12,6 +12,7 @@ type
   { TForm2 }
 
   TForm2 = class(TForm)
+    comReportButton: TButton;
     comButton: TButton;
     loadButton: TButton;
     OpenDialog1: TOpenDialog;
@@ -20,6 +21,7 @@ type
     exitButton: TButton;
     Root: TLabel;
     procedure comButtonClick(Sender: TObject);
+    procedure comReportButtonClick(Sender: TObject);
     procedure exitButtonClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure loadButtonClick(Sender: TObject);
@@ -54,6 +56,12 @@ begin
    Form14.Show;
    Form14.refresh;
    Form2.Hide;
+end;
+
+procedure TForm2.comReportButtonClick(Sender: TObject);
+begin
+  Form1.comunities.comunityReport;
+  ShowMessage('Se creo el reporte correctamente')
 end;
 
 procedure TForm2.FormClose(Sender: TObject; var CloseAction: TCloseAction);

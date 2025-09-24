@@ -20,7 +20,7 @@ object Form2: TForm2
   end
   object loadButton: TButton
     Left = 80
-    Height = 32
+    Height = 40
     Top = 88
     Width = 168
     Caption = 'Carga Masiva'
@@ -29,8 +29,8 @@ object Form2: TForm2
   end
   object repUserB: TButton
     Left = 80
-    Height = 32
-    Top = 128
+    Height = 40
+    Top = 136
     Width = 168
     Caption = 'Reporte de Usuarios'
     TabOrder = 1
@@ -38,17 +38,17 @@ object Form2: TForm2
   end
   object repReB: TButton
     Left = 80
-    Height = 32
-    Top = 168
+    Height = 40
+    Top = 184
     Width = 168
     Caption = 'Reporte de Relaciones'
     TabOrder = 2
     OnClick = repReBClick
   end
   object exitButton: TButton
-    Left = 96
+    Left = 88
     Height = 32
-    Top = 280
+    Top = 344
     Width = 136
     Caption = 'Salir'
     TabOrder = 3
@@ -56,12 +56,21 @@ object Form2: TForm2
   end
   object comButton: TButton
     Left = 80
-    Height = 25
-    Top = 208
+    Height = 33
+    Top = 232
     Width = 168
-    Caption = 'Crear Comunidad'
+    Caption = 'Comunidades'
     TabOrder = 4
     OnClick = comButtonClick
+  end
+  object comReportButton: TButton
+    Left = 80
+    Height = 33
+    Top = 280
+    Width = 171
+    Caption = 'Reporte de Comunidades'
+    TabOrder = 5
+    OnClick = comReportButtonClick
   end
   object OpenDialog1: TOpenDialog
     Left = 216

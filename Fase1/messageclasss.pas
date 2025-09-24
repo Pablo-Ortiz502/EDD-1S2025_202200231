@@ -10,6 +10,7 @@ uses
 type
 
     Message = class
+     public
       id: Integer;
       sender: String;
       stateR: Boolean;

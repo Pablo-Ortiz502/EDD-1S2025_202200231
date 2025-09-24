@@ -1,10 +1,10 @@
 object Form2: TForm2
   Left = 1520
-  Height = 416
+  Height = 481
   Top = 32
   Width = 320
   Caption = 'Root'
-  ClientHeight = 416
+  ClientHeight = 481
   ClientWidth = 320
   Color = clMoneyGreen
   OnClose = FormClose
@@ -23,14 +23,14 @@ object Form2: TForm2
     Height = 40
     Top = 88
     Width = 168
-    Caption = 'Carga Masiva'
+    Caption = 'Carga Usuarios'
     TabOrder = 0
     OnClick = loadButtonClick
   end
   object repUserB: TButton
     Left = 80
     Height = 40
-    Top = 136
+    Top = 208
     Width = 168
     Caption = 'Reporte de Usuarios'
     TabOrder = 1
@@ -39,7 +39,7 @@ object Form2: TForm2
   object repReB: TButton
     Left = 80
     Height = 40
-    Top = 184
+    Top = 256
     Width = 168
     Caption = 'Reporte de Relaciones'
     TabOrder = 2
@@ -48,7 +48,7 @@ object Form2: TForm2
   object exitButton: TButton
     Left = 88
     Height = 32
-    Top = 344
+    Top = 416
     Width = 136
     Caption = 'Salir'
     TabOrder = 3
@@ -57,7 +57,7 @@ object Form2: TForm2
   object comButton: TButton
     Left = 80
     Height = 33
-    Top = 232
+    Top = 304
     Width = 168
     Caption = 'Comunidades'
     TabOrder = 4
@@ -66,11 +66,20 @@ object Form2: TForm2
   object comReportButton: TButton
     Left = 80
     Height = 33
-    Top = 280
+    Top = 352
     Width = 171
     Caption = 'Reporte de Comunidades'
     TabOrder = 5
     OnClick = comReportButtonClick
+  end
+  object messButton: TButton
+    Left = 80
+    Height = 40
+    Top = 144
+    Width = 171
+    Caption = 'Carga Mensajes'
+    TabOrder = 6
+    OnClick = messButtonClick
   end
   object OpenDialog1: TOpenDialog
     Left = 216

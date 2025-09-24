@@ -108,7 +108,7 @@ implementation
        current := head;
 
        repeat
-         if current^.data.Email = aEmail then
+         if current^.data.user = aEmail then
            begin
              Result := current^.data;
              Exit;
@@ -147,7 +147,6 @@ implementation
            begin
            repeat
              Writeln(f, '  "', current^.data.id, '" [label="',
-             'ID: ', current^.data.id, '\n',
              'Nombre: ', current^.data.name, '\n',
              'Usuario: ', current^.data.user, '\n',
              'Email: ', current^.data.Email, '\n',

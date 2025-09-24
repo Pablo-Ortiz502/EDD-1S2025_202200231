@@ -129,7 +129,7 @@ implementation
          current := head;
          while current <> nil do
            begin
-             if current^.data.Email = aEmail then
+             if current^.data.user = aEmail then
                begin
                  Result := current^.data;
                  Exit;
@@ -146,7 +146,7 @@ implementation
          current := head;
          while current <> nil do
            begin
-             if (current^.data.Email = aEmail) and (current^.data.password= aPassword) then
+             if (current^.data.user = aEmail) and (current^.data.password= aPassword) then
                begin
                  Result := current^.data;
                  Exit;
