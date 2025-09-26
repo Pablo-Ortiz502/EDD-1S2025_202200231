@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="project1.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="10"/>
+        <CursorPos X="43" Y="39"/>
+        <UsageCount Value="175"/>
+      </Unit>
+      <Unit>
+        <Filename Value="unit1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit1"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="10"/>
+        <CursorPos X="21" Y="66"/>
+        <UsageCount Value="175"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="unit2.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form2"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit2"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="77"/>
+        <CursorPos X="34" Y="79"/>
+        <UsageCount Value="175"/>
+      </Unit>
+      <Unit>
+        <Filename Value="unit3.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Unit3"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="49"/>
+        <CursorPos X="42" Y="68"/>
+        <UsageCount Value="175"/>
+      </Unit>
+      <Unit>
+        <Filename Value="unit4.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form3"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit4"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="34"/>
+        <CursorPos X="94" Y="52"/>
+        <UsageCount Value="165"/>
+      </Unit>
+      <Unit>
+        <Filename Value="unit5.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Unit5"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="76"/>
+        <CursorPos X="51" Y="89"/>
+        <UsageCount Value="163"/>
+      </Unit>
+      <Unit>
+        <Filename Value="unit6.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form4"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit6"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="88"/>
+        <CursorPos X="44" Y="65"/>
+        <UsageCount Value="157"/>
+      </Unit>
+      <Unit>
+        <Filename Value="circularl.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="circularL"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="6"/>
+        <UsageCount Value="136"/>
+      </Unit>
+      <Unit>
+        <Filename Value="stackl.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="stackL"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="28"/>
+        <CursorPos X="14" Y="126"/>
+        <UsageCount Value="121"/>
+      </Unit>
+      <Unit>
+        <Filename Value="messageclasss.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MessageClasss"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2"/>
+        <CursorPos X="20" Y="20"/>
+        <UsageCount Value="119"/>
+      </Unit>
+      <Unit>
+        <Filename Value="trashui.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form5"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="trashUI"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="123"/>
+        <CursorPos X="32" Y="140"/>
+        <UsageCount Value="118"/>
+      </Unit>
+      <Unit>
+        <Filename Value="addcon.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form6"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="addCon"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="59"/>
+        <CursorPos X="70" Y="64"/>
+        <UsageCount Value="113"/>
+      </Unit>
+      <Unit>
+        <Filename Value="postui.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form7"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="postUI"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="70"/>
+        <CursorPos X="51" Y="85"/>
+        <UsageCount Value="109"/>
+      </Unit>
+      <Unit>
+        <Filename Value="contactsui.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form8"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="contactsUI"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="38"/>
+        <CursorPos X="16" Y="33"/>
+        <UsageCount Value="107"/>
+      </Unit>
+      <Unit>
+        <Filename Value="sendui.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form9"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="sendUI"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="60"/>
+        <CursorPos X="132" Y="99"/>
+        <UsageCount Value="103"/>
+      </Unit>
+      <Unit>
+        <Filename Value="progui.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form10"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="progUI"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="52"/>
+        <CursorPos X="72" Y="86"/>
+        <UsageCount Value="98"/>
+      </Unit>
+      <Unit>
+        <Filename Value="queul.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="queuL"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="66" Y="52"/>
+        <UsageCount Value="96"/>
+      </Unit>
+      <Unit>
+        <Filename Value="programedui.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form11"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="programedUI"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="46"/>
+        <CursorPos X="48" Y="38"/>
+        <UsageCount Value="96"/>
+      </Unit>
+      <Unit>
+        <Filename Value="createui.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form12"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="createUI"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="66"/>
+        <CursorPos X="37" Y="79"/>
+        <UsageCount Value="91"/>
+      </Unit>
+      <Unit>
+        <Filename Value="userload.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="userLoad"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="9"/>
+        <CursorPos X="61" Y="52"/>
+        <UsageCount Value="89"/>
+      </Unit>
+      <Unit>
+        <Filename Value="matrix.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="227"/>
+        <CursorPos X="3" Y="237"/>
+        <UsageCount Value="76"/>
+      </Unit>
+      <Unit>
+        <Filename Value="listsl.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="listsL"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="184"/>
+        <CursorPos X="31" Y="206"/>
+        <UsageCount Value="67"/>
+      </Unit>
+      <Unit>
+        <Filename Value="comui.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TForm13"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="comUI"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="32"/>
+        <CursorPos X="4" Y="60"/>
+        <UsageCount Value="61"/>
+      </Unit>
+      <Unit>
+        <Filename Value="comuui.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form14"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="comuUi"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="59"/>
+        <CursorPos X="4" Y="67"/>
+        <UsageCount Value="61"/>
+      </Unit>
+      <Unit>
+        <Filename Value="messloader.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MessLoader"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="49"/>
+        <CursorPos X="46" Y="79"/>
+        <UsageCount Value="45"/>
+      </Unit>
+      <Unit>
+        <Filename Value="avltree.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="avlTree"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="9" Y="190"/>
+        <UsageCount Value="41"/>
+      </Unit>
+      <Unit>
+        <Filename Value="prototypeui.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form15"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="prototypeUI"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="84"/>
+        <CursorPos X="38" Y="104"/>
+        <UsageCount Value="27"/>
+      </Unit>
+      <Unit>
+        <Filename Value="unit2.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="7"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/usr/share/lazarus/4.2.0/lcl/include/customform.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2287"/>
+        <CursorPos Y="2303"/>
+        <UsageCount Value="2"/>
+      </Unit>
+      <Unit>
+        <Filename Value="unit6.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="3"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit>
+      <Unit>
+        <Filename Value="sendui.lfm"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="46"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="-1"/>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>
