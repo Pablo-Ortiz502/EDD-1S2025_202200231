@@ -65,9 +65,11 @@ begin
       begin
        if us <> nil then
          begin
-           logUser.contactList.add(Contact.create(us.id,us.tel,us.name,us.user,us.Email));
-           us.contactList.add(Contact.create(logUser.id,logUser.tel,logUser.name,logUser.user,logUser.Email));
+
+           logUser.conTree.Insert(Contact.create(us.id,us.tel,us.name,us.user,us.Email));
+           us.conTree.Insert(Contact.create(logUser.id,logUser.tel,logUser.name,logUser.user,logUser.Email));
            Form1.relations.Insert(logUser.id,us.id,0,logUser.Email,us.Email);
+           Form1.relations.Insert(us.id,logUser.id,0,us.Email,logUser.Email);
            ShowMessage('Contacto agregado');
            Form6.mailEdit.Text:='';
 

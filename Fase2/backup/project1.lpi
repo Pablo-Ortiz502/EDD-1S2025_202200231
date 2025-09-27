@@ -208,8 +208,14 @@
         <Filename Value="prototypeui.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form15"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="prototypeUI"/>
+      </Unit>
+      <Unit>
+        <Filename Value="btstreec.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="BTSTreeC"/>
       </Unit>
     </Units>
   </ProjectOptions>

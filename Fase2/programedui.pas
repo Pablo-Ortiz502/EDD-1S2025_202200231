@@ -95,8 +95,13 @@ var
   r: mNode;
   i: Integer;
   m : message;
+  u: User;
 begin
-   re := logUser.contactList.findEmail(item.Caption);
+   u := Form1.userList.findEmail(item.Caption);
+   if u <> nil then
+    re := logUser.conTree.FindById(u.id)
+   else
+    re := nil;
    me := logUser.programList.findById(Integer(ListView1.Selected.Data));
    if re <> nil then
    begin

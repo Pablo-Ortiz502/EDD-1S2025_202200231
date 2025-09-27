@@ -41,7 +41,7 @@ var
   Form9: TForm9;
 
 implementation
-Uses Unit1,Unit4,matrix;
+Uses Unit1,Unit4,matrix,BTSTreeC;
 {$R *.lfm}
 
 procedure TForm9.reciverEditChange(Sender: TObject);
@@ -62,8 +62,10 @@ var
   r: mNode;
   i:Integer;
   m: Message;
+  u: User;
 begin
-   re := logUser.contactList.findEmail(Form9.reciverEdit.Text);
+   u := Form1.userList.findEmail(Form9.reciverEdit.Text);
+   re := logUser.conTree.FindById(u.id);
    if re <> nil then
    begin
       dateA := FormatDateTime('dd/mm/yyyy  hh:nn',Now);
@@ -92,14 +94,19 @@ var
   re: Contact;
   dateA: string;
   m: Message;
+  u: User;
 begin
 if (MessageDlg('Esta seguro de Enviar a Borradores',mtWarning,[mbOk,mbCancel],0) = mrOk) then
 begin
-     re := logUser.contactList.findEmail(Form9.reciverEdit.Text);
+   u := Form1.userList.findEmail(Form9.reciverEdit.Text);
+   if u<> nil then
+    re := logUser.conTree.FindById(u.id);
+   else
+     re := nil;
    if re <> nil then
    begin
       dateA := FormatDateTime('dd/mm/yyyy  hh:nn',Now);
-      m := Message.create(dateA,logUser.Email,Form9.subjectEdit.Text,Form9.messMemo.Text,False);
+      m := Message.create(dateA,re.Email,Form9.subjectEdit.Text,Form9.messMemo.Text,False);
       m.id:= LogUSer.protoTree.countT;
       LogUser.protoTree.Insert(m);
       Inc(LogUser.protoTree.countT);

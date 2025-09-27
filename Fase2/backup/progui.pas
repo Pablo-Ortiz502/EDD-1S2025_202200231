@@ -41,7 +41,7 @@ var
   Form10: TForm10;
 
 implementation
-Uses circularL,MessageClasss,Unit4;
+Uses circularL,MessageClasss,Unit4,Unit1;
 {$R *.lfm}
 
 procedure TForm10.reciverEditChange(Sender: TObject);
@@ -59,8 +59,13 @@ procedure TForm10.sendButtonClick(Sender: TObject);
 var
   re: Contact;
   dateA: string;
+  u: User
 begin
-   re := logUser.contactList.findEmail(Form10.reciverEdit.Text);
+  u := Form1.userList.findEmail(Form10.reciverEdit.Text);
+  if u<>nil then
+   re := logUser.conTree.FindById(u.id)
+  else
+   re := nil;
    if re <> nil then
    begin
       dateA := FormatDateTime('dd/mm/yyyy',Form10.datePicker.Date);

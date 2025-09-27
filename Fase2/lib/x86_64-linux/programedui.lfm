@@ -6,6 +6,7 @@ object Form11: TForm11
   Caption = 'Form11'
   ClientHeight = 482
   ClientWidth = 622
+  LCLVersion = '4.2.0.0'
   OnClose = FormClose
   OnCreate = FormCreate
   object ListView1: TListView

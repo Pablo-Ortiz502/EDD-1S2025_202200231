@@ -34,7 +34,7 @@ type
         property bHead: CNode read head write head;
         constructor create;
         destructor Destroy; override;
-        procedure add(aContact: Contact);
+        procedure add(aContact: Contact;i:Integer);
         function findEmail(aEmail: string): Contact;
         procedure contactReport(const fileName: string);
       end;
@@ -72,12 +72,13 @@ implementation
         end;
 
 
-      procedure CircularList.add(aContact: Contact);
+      procedure CircularList.add(aContact: Contact;i:Integer);
         var
           newNode, last: CNode;
         begin
           New(newNode);
           newNode^.data := aContact;
+          newNode^.data.id:=i;
 
           if head = nil then
            begin
@@ -108,7 +109,7 @@ implementation
        current := head;
 
        repeat
-         if current^.data.user = aEmail then
+         if current^.data.Email = aEmail then
            begin
              Result := current^.data;
              Exit;

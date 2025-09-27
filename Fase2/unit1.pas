@@ -69,7 +69,6 @@ begin
   userList.add(User.create(5100,41877278,'Pablo','EliteDragon','1234','pablo@gmail.com'));
   userList.add(User.create(5200,41877278,'Cesar','Elliwood','2','2'));
   relations := MatrixL.create;
-  relations.Insert(1,2,4,'pablo@gmail.com','jsdklfj@gmail.com');
   comunities := ListList.create;
 end;
 

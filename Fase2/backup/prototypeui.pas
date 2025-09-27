@@ -94,6 +94,12 @@ begin
     begin
         bLogUser.protoTree.Delete(i);
         messList := blogUser.protoTree.InOrderList();
+        Form15.subjectEdit.Text:='';
+        Form15.messMemo.Enabled:=False;
+        Form15.subjectEdit.Enabled:=False;
+        Form15.sendButton.Enabled:=False;
+        deleteButton.Enabled:=False;
+        Form15.refreshList(listView1);
         Form15.refreshList(listView1);
     end;
 
@@ -148,8 +154,13 @@ var
   r: mNode;
   k: Integer;
   m : message;
+  u: User;
 begin
-   re := blogUser.contactList.findEmail(item.Caption);
+   u := Form1.userList.findEmail(item.Caption);
+   if u <> nil then
+    re := blogUser.conTree.FindById(u.id)
+   else
+    re := nil;
    if re <> nil then
    begin
       dateA := FormatDateTime('dd/mm/yyyy  hh:nn',Now);

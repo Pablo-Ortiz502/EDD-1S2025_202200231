@@ -13,7 +13,7 @@ uses
   Forms, Unit1, Unit2, Unit3, Unit4, Unit5, Unit6, circularL, stackL,
   MessageClasss, trashUI, addCon, postUI, contactsUI, sendUI, progUI,
   datetimectrls, queuL, programedUI, createUI, userLoad, matrix, listsL,
-  comuUi, MessLoader, avlTree, prototypeUI
+  comuUi, MessLoader, avlTree, prototypeUI, BTSTreeC
   { you can add units after this };
 
 {$R *.res}

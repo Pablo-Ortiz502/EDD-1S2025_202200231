@@ -32,7 +32,8 @@ var
   reciver: User;
   r: mNode;
   k :Integer;
-
+  c1 : Contact;
+  c2 : Contact;
 begin
   if not FileExists(fileName) then
     raise Exception.Create('Archivo JSON no encontrado: ' + fileName);
@@ -55,13 +56,19 @@ begin
            begin
              if(remitent.contactList.findEmail(MessObject.Strings['destinatario']) = nil) then
               begin
-                reciver.contactList.add(Contact.create(remitent.id,remitent.tel,remitent.name,remitent.user,remitent.Email));
-                remitent.contactList.add(Contact.create(reciver.id,reciver.tel,reciver.name,reciver.user,reciver.Email));
+                c1 :=  Contact.create(remitent.id,remitent.tel,remitent.name,remitent.user,remitent.Email);
+                c2 := Contact.create(reciver.id,reciver.tel,reciver.name,reciver.user,reciver.Email);
+                reciver.conTree.Insert(c1);
+                remitent.conTree.Insert(c2);
                 Form1.relations.Insert(reciver.id,remitent.id,0,reciver.Email,remitent.Email);
                 Form1.relations.Insert(remitent.id,reciver.id,0,remitent.Email,reciver.Email);
 
                 NewMessage := Message.create(dateA,MessObject.Strings['remitente'], MessObject.Strings['asunto'], MessObject.Strings['mensaje'], False);
-                reciver.messListU.add(NewMessage);
+                NewMessage.id:=reciver.messTree.countT;
+                reciver.messTree.Insert(NewMessage);
+                Inc(reciver.messTree.countT);
+
+
                 r := Form1.relations.FindNode(remitent.id,reciver.id);
                 k := r^.value;
                 Inc(k);
@@ -73,6 +80,7 @@ begin
                 newMessage.id:=reciver.messTree.countT;
                 reciver.messTree.Insert(NewMessage);
                 Inc(reciver.messTree.countT);
+
                 r := Form1.relations.FindNode(remitent.id,reciver.id);
                 k := r^.value;
                 Inc(k);

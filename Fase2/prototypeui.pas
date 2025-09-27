@@ -154,8 +154,13 @@ var
   r: mNode;
   k: Integer;
   m : message;
+  u: User;
 begin
-   re := blogUser.contactList.findEmail(item.Caption);
+   u := Form1.userList.findEmail(item.Caption);
+   if u <> nil then
+    re := bLogUser.conTree.FindById(u.id)
+   else
+    re := nil;
    if re <> nil then
    begin
       dateA := FormatDateTime('dd/mm/yyyy  hh:nn',Now);
