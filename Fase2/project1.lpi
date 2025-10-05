@@ -234,6 +234,7 @@
         <Filename Value="deleteconui.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form17"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="deleteConUI"/>
       </Unit>

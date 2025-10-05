@@ -5,7 +5,7 @@ unit avlTree;
 interface
 
 uses
-  Classes, SysUtils, MessageClasss, Unit5;
+  Classes, SysUtils, MessageClasss, Unit5,Process;
 
 type
   PAVLNode = ^AVLNode;
@@ -35,6 +35,7 @@ type
 
   public
     countT: Integer;
+    property aRoot: PAVLNode read root;
     constructor create;
     procedure Insert(msg: Message);
     procedure Delete(id: Integer);
@@ -42,6 +43,7 @@ type
     function PreOrderList: DoubleList;
     function PostOrderList: DoubleList;
     function FindById(id: Integer): Message;
+    procedure GenerateGraph(const userName: string);
   end;
 
 implementation
@@ -266,14 +268,14 @@ procedure AVLTrees.inorderToList(N: PAVLNode; L: DoubleList);
 begin
   if N = nil then Exit;
   inorderToList(N^.left, L);
-  L.add(N^.data);
+  L.add(N^.data,N^.data.id);
   inorderToList(N^.right, L);
 end;
 
 procedure AVLTrees.preorderToList(N: PAVLNode; L: DoubleList);
 begin
   if N = nil then Exit;
-  L.add(N^.data);
+  L.add(N^.data,N^.data.id);
   preorderToList(N^.left, L);
   preorderToList(N^.right, L);
 end;
@@ -283,7 +285,7 @@ begin
   if N = nil then Exit;
   postorderToList(N^.left, L);
   postorderToList(N^.right, L);
-  L.add(N^.data);
+  L.add(N^.data,N^.data.id);
 end;
 
 
@@ -303,6 +305,76 @@ function AVLTrees.PostOrderList: DoubleList;
 begin
   Result := DoubleList.Create;
   postorderToList(root, Result);
+end;
+
+procedure AVLTrees.GenerateGraph(const userName: string);
+  procedure writeNodeDot(N: PAVLNode; SL: TStringList);
+  var
+    nodeName, labelText: string;
+  begin
+    if N = nil then Exit;
+
+    nodeName := 'n' + IntToHex(NativeUInt(N), 8);
+    labelText := Format('ID: %d\nReceptor: %s\nAsunto: %s\nFecha: %s\nMensaje: %s',
+      [N^.data.id,
+       N^.data.sender,
+       N^.data.subject,
+       N^.data.date,
+       N^.data.message]);
+
+    SL.Add(Format('%s [label="%s", shape=box, style=filled, fillcolor=lightyellow, fontname="Arial"];',
+      [nodeName, StringReplace(labelText, '"', '\"', [rfReplaceAll])]));
+
+    if N^.right <> nil then
+    begin
+      SL.Add(Format('%s -> %s;', [nodeName, 'n' + IntToHex(NativeUInt(N^.right), 8)]));
+      writeNodeDot(N^.right, SL);
+    end;
+    if N^.left <> nil then
+    begin
+      SL.Add(Format('%s -> %s;', [nodeName, 'n' + IntToHex(NativeUInt(N^.left), 8)]));
+      writeNodeDot(N^.left, SL);
+    end;
+  end;
+
+var
+  SL: TStringList;
+  dotFile, pngFile, userFolder: string;
+  proc: TProcess;
+begin
+  userFolder := 'Reportes/' + userName;
+  ForceDirectories(userFolder);
+
+  dotFile := userFolder + '/AVL_' + userName + '.dot';
+  pngFile := userFolder + '/AVL_' + userName + '.png';
+
+  SL := TStringList.Create;
+  try
+    SL.Add('digraph G {');
+    SL.Add('rankdir=TB;');
+    SL.Add('labelloc="t";');
+    SL.Add('label="Borradores";');
+    SL.Add('node [fontname="Arial"];');
+    writeNodeDot(root, SL);
+    SL.Add('}');
+    SL.SaveToFile(dotFile);
+
+    // Ejecuta Graphviz para generar PNG
+    proc := TProcess.Create(nil);
+    try
+      proc.Executable := 'dot';
+      proc.Parameters.Add('-Tpng');
+      proc.Parameters.Add(dotFile);
+      proc.Parameters.Add('-o');
+      proc.Parameters.Add(pngFile);
+      proc.Options := proc.Options + [poWaitOnExit];
+      proc.Execute;
+    finally
+      proc.Free;
+    end;
+  finally
+    SL.Free;
+  end;
 end;
 
 end.

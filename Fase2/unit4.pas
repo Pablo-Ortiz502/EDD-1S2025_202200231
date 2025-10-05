@@ -114,10 +114,12 @@ end;
 
 procedure TForm3.reportButtonClick(Sender: TObject);
 begin
-   aLogUser.messListU.messageReport(aLogUser.name +'__mensajes' );
-   aLogUser.trashList.trashReport(aLogUser.name+'__Papelera');
-   aLogUser.programList.programReport(aLogUser.name +'__Programados');
-   aLogUser.contactList.contactReport(aLogUser.name+'__contactos');
+   if aLogUser.messTree.InOrderList.aHead <> nil then  aLogUser.messTree.InOrderList.messageReport(aLogUser.name +'__mensajes' );
+   if aLogUser.trashList.aHead <> nil then aLogUser.trashList.trashReport(aLogUser.name+'__Papelera');
+   if aLogUser.programList.aHead <> nil then aLogUser.programList.programReport(aLogUser.name +'__Programados');
+   if aLogUser.protoTree.aRoot <> nil then  aLogUser.protoTree.GenerateGraph(aLogUser.name +'__Borradores');
+   if aLogUser.conTree.InOrderList.bHead <> nil then aLogUser.conTree.InOrderList.contactReport(aLogUser.name+'__contactos');
+   if aLogUser.favTree.aRoot <> nil then aLogUser.favTree.GenerateGraph(aLogUser.name +'__Fasvoritos');
    ShowMessage('Reportes creados correctamente');
 end;
 

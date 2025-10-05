@@ -23,6 +23,7 @@ type
         messTree: AVLTrees;
         protoTree: AVLTrees;
         conTree: BTSTree;
+        favTree: B5Tree;
         constructor create(aId, aTel: Integer; aName,aUser,aPassword,aEmail: string);
     end;
 
@@ -62,9 +63,10 @@ implementation
         user := aUser;
         programList := QueuList.create;
         messTree := AVLTrees.create;
+        trashList :=  StackList.create;
         protoTree:= AVLTrees.create;
         conTree:= BTSTree.create;
-        favTree:=
+        favTree:= B5Tree.Create;
       end;
 
 

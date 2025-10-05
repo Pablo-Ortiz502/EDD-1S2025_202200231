@@ -63,7 +63,9 @@ implementation
         user := aUser;
         programList := QueuList.create;
         messTree := AVLTrees.create;
+        trashList :=  StackList.create;
         protoTree:= AVLTrees.create;
+        messListU := DoubleList.create;
         conTree:= BTSTree.create;
         favTree:= B5Tree.Create;
       end;

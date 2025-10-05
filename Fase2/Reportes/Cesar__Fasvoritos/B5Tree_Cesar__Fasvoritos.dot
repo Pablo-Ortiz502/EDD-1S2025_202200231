@@ -1,0 +1,13 @@
+digraph G {
+rankdir=TB;
+labelloc="t";
+label="Correos Favoritos";
+node [fontname="Arial"];
+n7F9048083F20 [label="ID: 2\nRem: 1\nAsu: gjghjf\nMsg: ghjgfhjgfh\n---\nID: 5\nRem: 1\nAsu: gfdhgkyu\nMsg: wgfadcvx", shape=record, style=filled, fillcolor=lightgreen, fontname="Arial"];
+n7F9048083F20 -> n7F9048083EC0;
+n7F9048083EC0 [label="ID: 0\nRem: 1\nAsu: sdfsda\nMsg: fsadfasdf\n---\nID: 1\nRem: 1\nAsu: sdffasdf\nMsg: asdfsad", shape=record, style=filled, fillcolor=lightgreen, fontname="Arial"];
+n7F9048083F20 -> n7F9048084040;
+n7F9048084040 [label="ID: 3\nRem: 1\nAsu: fghfgh\nMsg: fgh\n---\nID: 4\nRem: 1\nAsu: htsgfh\nMsg: jdfghjghd", shape=record, style=filled, fillcolor=lightgreen, fontname="Arial"];
+n7F9048083F20 -> n7F90480840A0;
+n7F90480840A0 [label="ID: 6\nRem: 1\nAsu: xczvdcxzv\nMsg: zxcgfsdafsf\n---\nID: 7\nRem: 1\nAsu: sdafgr\nMsg: reagreg", shape=record, style=filled, fillcolor=lightgreen, fontname="Arial"];
+}

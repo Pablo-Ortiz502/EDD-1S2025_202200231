@@ -12,6 +12,7 @@ type
   { TForm3 }
 
   TForm3 = class(TForm)
+    deleteConButton: TButton;
     favButton: TButton;
     protoButton: TButton;
     contactButton: TButton;
@@ -29,6 +30,7 @@ type
 
     procedure addCButtonClick(Sender: TObject);
     procedure contactButtonClick(Sender: TObject);
+    procedure deleteConButtonClick(Sender: TObject);
     procedure entryButtonClick(Sender: TObject);
     procedure exitButtonClick(Sender: TObject);
     procedure favButtonClick(Sender: TObject);
@@ -51,7 +53,7 @@ var
   Form3: TForm3;
 implementation
 
-uses Unit1,Unit6,trashUI,addCon,postUI,contactsUI,sendUI,progUI,programedUI,Unit5,prototypeUI,favUI;
+uses Unit1,Unit6,trashUI,addCon,postUI,contactsUI,sendUI,progUI,programedUI,Unit5,prototypeUI,favUI,deleteConUI;
 {$R *.lfm}
 
 { TForm3 }
@@ -112,10 +114,11 @@ end;
 
 procedure TForm3.reportButtonClick(Sender: TObject);
 begin
-   aLogUser.messListU.messageReport(aLogUser.name +'__mensajes' );
-   aLogUser.trashList.trashReport(aLogUser.name+'__Papelera');
-   aLogUser.programList.programReport(aLogUser.name +'__Programados');
-   aLogUser.contactList.contactReport(aLogUser.name+'__contactos');
+   if aLogUser.messTree.InOrderList.aHead <> nil then  aLogUser.messTree.InOrderList.messageReport(aLogUser.name +'__mensajes' );
+   if aLogUser.trashList.aHead <> nil then aLogUser.trashList.trashReport(aLogUser.name+'__Papelera');
+   if aLogUser.programList.aHead <> nil then aLogUser.programList.programReport(aLogUser.name +'__Programados');
+   if aLogUser.protoTree.aRoot <> nil then  aLogUser.protoTree.GenerateGraph(aLogUser.name +'__Borradores');
+   if aLogUser.conTree.InOrderList.bHead <> nil then aLogUser.conTree.InOrderList.contactReport(aLogUser.name+'__contactos');
    ShowMessage('Reportes creados correctamente');
 end;
 
@@ -152,6 +155,13 @@ begin
   Form8.Show;
   Form8.setUser(aLogUser);
   Form3.hide;
+end;
+
+procedure TForm3.deleteConButtonClick(Sender: TObject);
+begin
+  Form17.Show;
+  Form17.setUser(aLogUser);
+  Form3.Hide;
 end;
 
 end.

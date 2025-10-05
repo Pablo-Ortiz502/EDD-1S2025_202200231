@@ -1,0 +1,6 @@
+digraph G {
+  node [shape=record, style=filled, fillcolor=lightblue];
+  rankdir=LR;
+  "5000" [label="Nombre: Pablo\nUsuario: 1\nEmail: 1\nTel: 41877278"];
+  "5000" -> "5000"[dir=both];
+}

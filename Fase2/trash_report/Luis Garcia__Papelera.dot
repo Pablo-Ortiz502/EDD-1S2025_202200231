@@ -1,6 +1,0 @@
-digraph G {
-rankdir=TB;
-  node [shape=record, style=filled, fillcolor=lightblue];
-  rankdir=LR;
-  "2" [label="Emisor: pablo@gmail.com\nAsunto: correo3\nFecha: 13/09/2025  10:00\nMensaje: hola 3"];
-}

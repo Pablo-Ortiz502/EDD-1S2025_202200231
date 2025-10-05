@@ -1,0 +1,17 @@
+digraph G {
+  node [shape=record, style=filled, fillcolor=lightblue];
+  rankdir=LR;
+  "0" [label="Emisor: 2\nAsunto: aklsjdhf\nFecha: 05/10/2025  11:33\nMensaje: asdlkfh;saopdf"];
+  "0" -> "1"[dir=both];
+  "1" [label="Emisor: 2\nAsunto: 1\nFecha: 05/10/2025  11:33\nMensaje: sadfsdafsadf"];
+  "1" -> "2"[dir=both];
+  "2" [label="Emisor: 2\nAsunto: dfgdsfg\nFecha: 05/10/2025  11:33\nMensaje: dsfgdsfgesrg"];
+  "2" -> "3"[dir=both];
+  "3" [label="Emisor: 2\nAsunto: erhgrthrt\nFecha: 05/10/2025  11:33\nMensaje: hdfshaerhera"];
+  "3" -> "4"[dir=both];
+  "4" [label="Emisor: pablo@gmail.com\nAsunto: sdafsdaf\nFecha: 05/10/2025  11:33\nMensaje: sadfsdafwef"];
+  "4" -> "5"[dir=both];
+  "5" [label="Emisor: pablo@gmail.com\nAsunto: sdagsdfghrttyjtyuj\nFecha: 05/10/2025  11:34\nMensaje: tsdfhbgdsr4t"];
+  "5" -> "6"[dir=both];
+  "6" [label="Emisor: pablo@gmail.com\nAsunto: yuiuio78695y8\nFecha: 05/10/2025  11:34\nMensaje: ghjttujgfhjty"];
+}

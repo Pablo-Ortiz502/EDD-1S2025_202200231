@@ -1,0 +1,13 @@
+digraph G {
+rankdir=TB;
+labelloc="t";
+label="Correos Favoritos (Árbol B de Orden 5)";
+node [fontname="Arial"];
+n7F80827EB3A0 [label="Min: 1\nMax: 4\nKeys: 2\nID: 4\nRem: 1\nAsu: dsfadf\nMsg: asdfasdf\n---\nID: 7\nRem: 1\nAsu: sdafasdfhth\nMsg: thshsdtf", shape=record, style=filled, fillcolor=lightgreen, fontname="Arial"];
+n7F80827EB3A0 -> n7F80827EB340;
+n7F80827EB340 [label="Min: 1\nMax: 4\nKeys: 4\nID: 0\nRem: 1\nAsu: sadfsda\nMsg: sadfsadf\n---\nID: 1\nRem: 1\nAsu: sdfsdf\nMsg: sdfsadfsad\n---\nID: 2\nRem: 1\nAsu: sdfsda\nMsg: sdfsadf\n---\nID: 3\nRem: 1\nAsu: sdfsdaf\nMsg: sadfasdf", shape=record, style=filled, fillcolor=lightgreen, fontname="Arial"];
+n7F80827EB3A0 -> n7F80827EB4C0;
+n7F80827EB4C0 [label="Min: 1\nMax: 4\nKeys: 2\nID: 5\nRem: 1\nAsu: sdafsad\nMsg: asdfsadfsa\n---\nID: 6\nRem: 1\nAsu: sdfasdfa\nMsg: sdafdf", shape=record, style=filled, fillcolor=lightgreen, fontname="Arial"];
+n7F80827EB3A0 -> n7F80827EB460;
+n7F80827EB460 [label="Min: 1\nMax: 4\nKeys: 2\nID: 8\nRem: 1\nAsu: hgjgfhj\nMsg: ghjfghjfg\n---\nID: 9\nRem: 1\nAsu: hgfgyj\nMsg: fgjgfhjfgj", shape=record, style=filled, fillcolor=lightgreen, fontname="Arial"];
+}

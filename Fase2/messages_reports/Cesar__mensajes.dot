@@ -1,0 +1,19 @@
+digraph G {
+  node [shape=record, style=filled, fillcolor=lightblue];
+  rankdir=LR;
+  "0" [label="Emisor: 1\nAsunto: sdfsda\nFecha: 05/10/2025  12:33\nMensaje: fsadfasdf"];
+  "0" -> "1"[dir=both];
+  "1" [label="Emisor: 1\nAsunto: sdffasdf\nFecha: 05/10/2025  12:33\nMensaje: asdfsad"];
+  "1" -> "2"[dir=both];
+  "2" [label="Emisor: 1\nAsunto: gjghjf\nFecha: 05/10/2025  12:33\nMensaje: ghjgfhjgfh"];
+  "2" -> "3"[dir=both];
+  "3" [label="Emisor: 1\nAsunto: fghfgh\nFecha: 05/10/2025  12:33\nMensaje: fgh"];
+  "3" -> "4"[dir=both];
+  "4" [label="Emisor: 1\nAsunto: htsgfh\nFecha: 05/10/2025  12:33\nMensaje: jdfghjghd"];
+  "4" -> "5"[dir=both];
+  "5" [label="Emisor: 1\nAsunto: gfdhgkyu\nFecha: 05/10/2025  12:33\nMensaje: wgfadcvx"];
+  "5" -> "6"[dir=both];
+  "6" [label="Emisor: 1\nAsunto: xczvdcxzv\nFecha: 05/10/2025  12:33\nMensaje: zxcgfsdafsf"];
+  "6" -> "7"[dir=both];
+  "7" [label="Emisor: 1\nAsunto: sdafgr\nFecha: 05/10/2025  12:33\nMensaje: reagreg"];
+}

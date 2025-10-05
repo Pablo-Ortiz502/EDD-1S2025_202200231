@@ -5,7 +5,7 @@ unit BTreeMessages;
 interface
 
 uses
-  SysUtils, MessageClasss, Unit5;
+  SysUtils, MessageClasss, Unit5,Process, Classes;
 
 const
   ORDER = 5;
@@ -34,10 +34,12 @@ type
     procedure BorrowFromPrev(x: PBTreeNode; idx: Integer);
     procedure BorrowFromNext(x: PBTreeNode; idx: Integer);
   public
+    property aRoot: PBTreeNode  read root;
     constructor Create;
     procedure Insert(k: Message);
     procedure Delete(k: Integer);
     function ToDoubleList: DoubleList;
+    procedure GenerateGraph(const userName: string);
   end;
 
 implementation
@@ -374,6 +376,86 @@ function B5Tree.ToDoubleList: DoubleList;
 begin
   Result := DoubleList.Create;
   InOrderTraverse(root, Result);
+end;
+
+
+procedure B5Tree.GenerateGraph(const userName: string);
+  procedure writeNodeDot(N: PBTreeNode; SL: TStringList);
+  var
+    nodeName, labelText: string;
+    i: Integer;
+    minKeys, maxKeys: Integer;
+  begin
+    if N = nil then Exit;
+
+    nodeName := 'n' + IntToHex(NativeUInt(N), 8);
+    labelText := '';
+
+    for i := 0 to N^.n - 1 do
+    begin
+
+      labelText += Format('ID: %d\nRem: %s\nAsu: %s\nMsg: %s',
+        [N^.keys[i].id,
+         Copy(N^.keys[i].sender,1,10),
+         Copy(N^.keys[i].subject,1,15),
+         Copy(N^.keys[i].message,1,20)]);
+      if i < N^.n - 1 then
+        labelText += '\n---\n';
+    end;
+
+    SL.Add(Format('%s [label="%s", shape=record, style=filled, fillcolor=lightgreen, fontname="Arial"];',
+      [nodeName, StringReplace(labelText, '"', '\"', [rfReplaceAll])]));
+
+
+    for i := 0 to N^.n do
+    begin
+      if N^.children[i] <> nil then
+      begin
+        SL.Add(Format('%s -> %s;', [nodeName, 'n' + IntToHex(NativeUInt(N^.children[i]), 8)]));
+        writeNodeDot(N^.children[i], SL);
+      end;
+    end;
+  end;
+
+var
+  SL: TStringList;
+  dotFile, pngFile, userFolder: string;
+  proc: TProcess;
+begin
+  if root = nil then Exit;
+
+  userFolder := 'Reportes/' + userName;
+  ForceDirectories(userFolder);
+
+  dotFile := userFolder + '/B5Tree_' + userName + '.dot';
+  pngFile := userFolder + '/B5Tree_' + userName + '.png';
+
+  SL := TStringList.Create;
+  try
+    SL.Add('digraph G {');
+    SL.Add('rankdir=TB;');
+    SL.Add('labelloc="t";');
+    SL.Add('label="Correos Favoritos";');
+    SL.Add('node [fontname="Arial"];');
+    writeNodeDot(root, SL);
+    SL.Add('}');
+    SL.SaveToFile(dotFile);
+
+    proc := TProcess.Create(nil);
+    try
+      proc.Executable := 'dot';
+      proc.Parameters.Add('-Tpng');
+      proc.Parameters.Add(dotFile);
+      proc.Parameters.Add('-o');
+      proc.Parameters.Add(pngFile);
+      proc.Options := proc.Options + [poWaitOnExit];
+      proc.Execute;
+    finally
+      proc.Free;
+    end;
+  finally
+    SL.Free;
+  end;
 end;
 
 end.

@@ -5,18 +5,18 @@ unit BTreeMessages;
 interface
 
 uses
-  SysUtils, MessageClasss, Unit5;  // Unit5 = tu DoubleList
+  SysUtils, MessageClasss, Unit5,Process, Classes;
 
 const
-  ORDER = 5;   // Orden del BTree (máx 4 claves por nodo)
+  ORDER = 5;
 
 type
   PBTreeNode = ^TBTreeNode;
   TBTreeNode = record
-    keys: array[0..ORDER-2] of Message;        // Máx ORDER-1 claves
-    children: array[0..ORDER-1] of PBTreeNode; // Máx ORDER hijos
-    n: Integer;    // Cantidad actual de claves
-    leaf: Boolean; // Si es hoja
+    keys: array[0..ORDER-2] of Message;
+    children: array[0..ORDER-1] of PBTreeNode;
+    n: Integer;
+    leaf: Boolean;
   end;
 
   B5Tree = class
@@ -34,15 +34,17 @@ type
     procedure BorrowFromPrev(x: PBTreeNode; idx: Integer);
     procedure BorrowFromNext(x: PBTreeNode; idx: Integer);
   public
+    property aRoot: PBTreeNode  read root;
     constructor Create;
     procedure Insert(k: Message);
     procedure Delete(k: Integer);
     function ToDoubleList: DoubleList;
+    procedure GenerateGraph(const userName: string);
   end;
 
 implementation
 
-{ === Helpers === }
+
 function B5Tree.NewNode(leaf: Boolean): PBTreeNode;
 var
   i: Integer;
@@ -61,7 +63,7 @@ begin
   root := nil;
 end;
 
-{ === Insert === }
+
 procedure B5Tree.Insert(k: Message);
 var
   r, s: PBTreeNode;
@@ -99,11 +101,11 @@ begin
 
   z^.n := (ORDER-1) - mid - 1;
 
-  // Copiar la mitad derecha de y a z
+
   for j := 0 to z^.n-1 do
     z^.keys[j] := y^.keys[j+mid+1];
 
-  // Copiar los hijos
+
   if not y^.leaf then
   begin
     for j := 0 to z^.n do
@@ -112,12 +114,12 @@ begin
 
   y^.n := mid;
 
-  // Insertar nuevo hijo en x
+
   for j := x^.n downto i+1 do
     x^.children[j+1] := x^.children[j];
   x^.children[i+1] := z;
 
-  // Subir clave media
+
   for j := x^.n-1 downto i do
     x^.keys[j+1] := x^.keys[j];
   x^.keys[i] := y^.keys[mid];
@@ -160,13 +162,12 @@ begin
   end;
 end;
 
-{ === Delete === }
+
 procedure B5Tree.Delete(k: Integer);
 begin
   if root = nil then Exit;
   DeleteNode(root, k);
 
-  // Si raíz se queda sin claves
   if (root^.n = 0) then
   begin
     if root^.leaf then
@@ -194,7 +195,7 @@ begin
   begin
     if x^.leaf then
     begin
-      // Caso 1: borrar directamente de hoja
+
       Dec(x^.n);
       while idx < x^.n do
       begin
@@ -204,7 +205,7 @@ begin
     end
     else
     begin
-      // Caso 2: clave interna
+
       if (x^.children[idx]^.n >= (ORDER div 2)) then
       begin
         key := GetPredecessor(x, idx);
@@ -354,7 +355,7 @@ begin
   Dec(sibling^.n);
 end;
 
-{ === Traverse === }
+
 procedure B5Tree.InOrderTraverse(x: PBTreeNode; L: DoubleList);
 var
   i: Integer;
@@ -375,6 +376,96 @@ function B5Tree.ToDoubleList: DoubleList;
 begin
   Result := DoubleList.Create;
   InOrderTraverse(root, Result);
+end;
+
+
+procedure B5Tree.GenerateGraph(const userName: string);
+  procedure writeNodeDot(N: PBTreeNode; SL: TStringList);
+  var
+    nodeName, labelText: string;
+    i: Integer;
+    minKeys, maxKeys: Integer;
+  begin
+    if N = nil then Exit;
+
+    nodeName := 'n' + IntToHex(NativeUInt(N), 8);
+    labelText := '';
+
+    // Calcula mínimos y máximos de claves para este nodo
+    if N = root then
+       minkeys := 1
+    else
+       minkeys := (ORDER div 2)-1;
+    maxKeys := ORDER - 1;
+
+    labelText := Format('Min: %d\nMax: %d\nKeys: %d\n', [minKeys, maxKeys, N^.n]);
+
+    for i := 0 to N^.n - 1 do
+    begin
+      // Truncar textos largos para que no se deformen los nodos
+      labelText += Format('ID: %d\nRem: %s\nAsu: %s\nMsg: %s',
+        [N^.keys[i].id,
+         Copy(N^.keys[i].sender,1,10),
+         Copy(N^.keys[i].subject,1,15),
+         Copy(N^.keys[i].message,1,20)]);
+      if i < N^.n - 1 then
+        labelText += '\n---\n';
+    end;
+
+    SL.Add(Format('%s [label="%s", shape=record, style=filled, fillcolor=lightgreen, fontname="Arial"];',
+      [nodeName, StringReplace(labelText, '"', '\"', [rfReplaceAll])]));
+
+    // Conecta los hijos
+    for i := 0 to N^.n do
+    begin
+      if N^.children[i] <> nil then
+      begin
+        SL.Add(Format('%s -> %s;', [nodeName, 'n' + IntToHex(NativeUInt(N^.children[i]), 8)]));
+        writeNodeDot(N^.children[i], SL);
+      end;
+    end;
+  end;
+
+var
+  SL: TStringList;
+  dotFile, pngFile, userFolder: string;
+  proc: TProcess;
+begin
+  if root = nil then Exit;
+
+  userFolder := 'Reportes/' + userName;
+  ForceDirectories(userFolder);
+
+  dotFile := userFolder + '/BTree_' + userName + '.dot';
+  pngFile := userFolder + '/BTree_' + userName + '.png';
+
+  SL := TStringList.Create;
+  try
+    SL.Add('digraph G {');
+    SL.Add('rankdir=TB;');
+    SL.Add('labelloc="t";');
+    SL.Add('label="Correos Favoritos (Árbol B de Orden 5)";');
+    SL.Add('node [fontname="Arial"];');
+    writeNodeDot(root, SL);
+    SL.Add('}');
+    SL.SaveToFile(dotFile);
+
+    // Ejecuta Graphviz para generar PNG
+    proc := TProcess.Create(nil);
+    try
+      proc.Executable := 'dot';
+      proc.Parameters.Add('-Tpng');
+      proc.Parameters.Add(dotFile);
+      proc.Parameters.Add('-o');
+      proc.Parameters.Add(pngFile);
+      proc.Options := proc.Options + [poWaitOnExit];
+      proc.Execute;
+    finally
+      proc.Free;
+    end;
+  finally
+    SL.Free;
+  end;
 end;
 
 end.

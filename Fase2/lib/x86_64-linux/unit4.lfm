@@ -7,6 +7,7 @@ object Form3: TForm3
   ClientHeight = 633
   ClientWidth = 461
   Color = clSkyBlue
+  LCLVersion = '4.2.0.0'
   OnClose = FormClose
   object entryButton: TButton
     Left = 72
