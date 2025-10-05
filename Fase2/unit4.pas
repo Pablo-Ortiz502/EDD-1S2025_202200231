@@ -12,6 +12,8 @@ type
   { TForm3 }
 
   TForm3 = class(TForm)
+    deleteConButton: TButton;
+    favButton: TButton;
     protoButton: TButton;
     contactButton: TButton;
     entryButton: TButton;
@@ -28,8 +30,10 @@ type
 
     procedure addCButtonClick(Sender: TObject);
     procedure contactButtonClick(Sender: TObject);
+    procedure deleteConButtonClick(Sender: TObject);
     procedure entryButtonClick(Sender: TObject);
     procedure exitButtonClick(Sender: TObject);
+    procedure favButtonClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure postButtonClick(Sender: TObject);
     procedure programButtonClick(Sender: TObject);
@@ -49,7 +53,7 @@ var
   Form3: TForm3;
 implementation
 
-uses Unit1,Unit6,trashUI,addCon,postUI,contactsUI,sendUI,progUI,programedUI,Unit5,prototypeUI;
+uses Unit1,Unit6,trashUI,addCon,postUI,contactsUI,sendUI,progUI,programedUI,Unit5,prototypeUI,favUI,deleteConUI;
 {$R *.lfm}
 
 { TForm3 }
@@ -66,6 +70,13 @@ begin
    Form1.passEdit.Text := '';
    Form1.Show;
    Form3.Hide;
+end;
+
+procedure TForm3.favButtonClick(Sender: TObject);
+begin
+  Form16.Show;
+  Form16.setUser(aLogUser);
+  Form3.Hide;
 end;
 
 procedure TForm3.FormClose(Sender: TObject; var CloseAction: TCloseAction);
@@ -143,6 +154,13 @@ begin
   Form8.Show;
   Form8.setUser(aLogUser);
   Form3.hide;
+end;
+
+procedure TForm3.deleteConButtonClick(Sender: TObject);
+begin
+  Form17.Show;
+  Form17.setUser(aLogUser);
+  Form3.Hide;
 end;
 
 end.

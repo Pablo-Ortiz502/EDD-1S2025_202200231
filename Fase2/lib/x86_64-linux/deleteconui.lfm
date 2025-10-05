@@ -1,0 +1,58 @@
+object Form17: TForm17
+  Left = 440
+  Height = 242
+  Top = 32
+  Width = 434
+  Caption = 'Form17'
+  ClientHeight = 242
+  ClientWidth = 434
+  OnClose = FormClose
+  object Label1: TLabel
+    Left = 16
+    Height = 25
+    Top = 16
+    Width = 207
+    Caption = 'Eliminar Contacto'
+    Font.Height = -21
+    Font.Name = 'Sans'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object addButton: TButton
+    Left = 304
+    Height = 36
+    Top = 96
+    Width = 107
+    Caption = 'Agregar'
+    Enabled = False
+    TabOrder = 0
+    OnClick = addButtonClick
+  end
+  object Label2: TLabel
+    Left = 32
+    Height = 21
+    Top = 104
+    Width = 62
+    Caption = 'Correo:'
+    Font.Height = -17
+    Font.Name = 'Sans'
+    ParentFont = False
+  end
+  object returnButton: TButton
+    Left = 160
+    Height = 33
+    Top = 184
+    Width = 120
+    Caption = 'Regresar'
+    TabOrder = 1
+    OnClick = returnButtonClick
+  end
+  object mailEdit: TEdit
+    Left = 96
+    Height = 36
+    Top = 96
+    Width = 200
+    TabOrder = 2
+    OnChange = mailEditChange
+  end
+end

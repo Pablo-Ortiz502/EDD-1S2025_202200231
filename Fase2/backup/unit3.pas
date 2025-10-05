@@ -5,7 +5,7 @@ unit Unit3;
 interface
 
 uses
-  Classes, SysUtils, Unit5,stackL,circularL,queuL,Process,avlTree,BTSTreeC;
+  Classes, SysUtils, Unit5,stackL,circularL,queuL,Process,avlTree,BTSTreeC, BTreeMessages;
 
 type
 
@@ -60,12 +60,11 @@ implementation
         Email := aEmail;
         tel := aTel;
         user := aUser;
-        trashList := StackList.create;
-        contactList := CircularList.create;
         programList := QueuList.create;
         messTree := AVLTrees.create;
         protoTree:= AVLTrees.create;
         conTree:= BTSTree.create;
+        favTree:=
       end;
 
 

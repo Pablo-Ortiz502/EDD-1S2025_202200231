@@ -70,6 +70,7 @@ begin
   Form4.messageMemo.Text := '';
   Form4.senderLabel.Caption := '';
   Form4.discardButton.Enabled:=False;
+  Form4.favButton.Enabled:=False;
 end;
 
 procedure TForm4.refreshList(aListView1: TlistView);
@@ -90,6 +91,10 @@ begin
            item.SubItems.Add('NL');
          item.SubItems.Add(node^.data.subject);
          item.SubItems.Add(node^.data.date);
+          if node^.data.fav = True then
+           item.SubItems.Add('(FAVORITO)')
+         else
+           item.SubItems.Add(' ');
          item.Data:= Pointer(node^.data.id);
          node := node^.next;
       end;
@@ -131,6 +136,12 @@ begin
         AutoSize:= True;
       end;
 
+    with listView1.Columns.Add do
+      begin
+        Caption := ' ';
+        AutoSize:= True;
+      end;
+
 end;
 
 procedure TForm4.inButtonClick(Sender: TObject);
@@ -165,8 +176,15 @@ begin
       m := bLogUser.messTree.FindById(i);
       if m <> nil then
         begin
-          m.fav:= True;
-          ShowMessage('El mensaje ahora es favorito')
+          if m.fav = false then
+           begin
+             blogUSer.favTree.Insert(m);
+             m.fav:=True;
+             ShowMessage('El mensaje ahora es Favorito');
+             Form4.refreshList(listView1);
+           end
+          else
+            ShowMessage('Mensaje ya esta en Favoritos');
         end
       else
           ShowMessage('Error al encontrar mensaje');

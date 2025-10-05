@@ -2,10 +2,10 @@ object Form3: TForm3
   Left = 248
   Height = 633
   Top = 32
-  Width = 298
+  Width = 461
   Caption = 'Form3'
   ClientHeight = 633
-  ClientWidth = 298
+  ClientWidth = 461
   Color = clSkyBlue
   OnClose = FormClose
   object entryButton: TButton
@@ -101,9 +101,9 @@ object Form3: TForm3
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 104
+    Left = 272
     Height = 24
-    Top = 56
+    Top = 24
     Width = 24
     Caption = 'aa'
     Font.Height = -20
@@ -127,5 +127,14 @@ object Form3: TForm3
     Caption = 'Borradores'
     TabOrder = 10
     OnClick = protoButtonClick
+  end
+  object favButton: TButton
+    Left = 264
+    Height = 25
+    Top = 96
+    Width = 163
+    Caption = 'Favoritos'
+    TabOrder = 11
+    OnClick = favButtonClick
   end
 end

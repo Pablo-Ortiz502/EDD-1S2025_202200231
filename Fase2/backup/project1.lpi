@@ -217,6 +217,26 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="BTSTreeC"/>
       </Unit>
+      <Unit>
+        <Filename Value="btreemessages.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="BTreeMessages"/>
+      </Unit>
+      <Unit>
+        <Filename Value="favui.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form16"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="favUI"/>
+      </Unit>
+      <Unit>
+        <Filename Value="deleteconui.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form17"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="deleteConUI"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

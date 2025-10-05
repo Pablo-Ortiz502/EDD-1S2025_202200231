@@ -5,7 +5,7 @@ unit Unit3;
 interface
 
 uses
-  Classes, SysUtils, Unit5,stackL,circularL,queuL,Process,avlTree,BTSTreeC;
+  Classes, SysUtils, Unit5,stackL,circularL,queuL,Process,avlTree,BTSTreeC, BTreeMessages;
 
 type
 
@@ -23,6 +23,7 @@ type
         messTree: AVLTrees;
         protoTree: AVLTrees;
         conTree: BTSTree;
+        favTree: B5Tree;
         constructor create(aId, aTel: Integer; aName,aUser,aPassword,aEmail: string);
     end;
 
@@ -64,6 +65,7 @@ implementation
         messTree := AVLTrees.create;
         protoTree:= AVLTrees.create;
         conTree:= BTSTree.create;
+        favTree:= B5Tree.Create;
       end;
 
 
