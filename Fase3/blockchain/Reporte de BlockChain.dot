@@ -1,0 +1,11 @@
+digraph Blockchain {
+rankdir=LR;
+node [shape=record, style=filled, fillcolor=lightyellow, fontname="Arial"];
+"3" [label="Index: 3\nTimestamp: 21-10-25::22:04:56\nID: 1\nSender: 2\nSubject: sdfasdf\nMessage: asdfasf\nNonce: 10455\nPrevHash: 0002b47468bbb2574f280c51ab0111585ef732edf58cdb601dd6aa0291e8d7d6\nHash: 000cd2d5f3b93d6a1a6e7a32281cf3083d20f486a4fa24a9475b938905839418"];
+"3" -> "2";
+"2" [label="Index: 2\nTimestamp: 21-10-25::22:04:52\nID: 0\nSender: 2\nSubject: 1sdfasdf\nMessage: asdfasdfsaf\nNonce: 6098\nPrevHash: 000fe1d67c563e52eedd22ba9cd7ef2824926bacf59b57d082492a557b07110f\nHash: 0002b47468bbb2574f280c51ab0111585ef732edf58cdb601dd6aa0291e8d7d6"];
+"2" -> "1";
+"1" [label="Index: 1\nTimestamp: 21-10-25::22:04:35\nID: 1\nSender: 1\nSubject: sdafsdf\nMessage: sadfsdf\nNonce: 4902\nPrevHash: 000e598788378ad05bc6bc19cc6229f74c9d5e3150e3fed2c4db77a6a8609d54\nHash: 000fe1d67c563e52eedd22ba9cd7ef2824926bacf59b57d082492a557b07110f"];
+"1" -> "0";
+"0" [label="Index: 0\nTimestamp: 21-10-25::22:04:32\nID: 0\nSender: 1\nSubject: sadf\nMessage: safs\nNonce: 3007\nPrevHash: 0000\nHash: 000e598788378ad05bc6bc19cc6229f74c9d5e3150e3fed2c4db77a6a8609d54"];
+}

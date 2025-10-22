@@ -1,0 +1,58 @@
+object Form19: TForm19
+  Left = 432
+  Height = 256
+  Top = 32
+  Width = 439
+  Caption = 'Form19'
+  ClientHeight = 256
+  ClientWidth = 439
+  OnClose = FormClose
+  object Label1: TLabel
+    Left = 16
+    Height = 25
+    Top = 16
+    Width = 207
+    Caption = 'Consultar correos'
+    Font.Height = -21
+    Font.Name = 'Sans'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object addButton: TButton
+    Left = 304
+    Height = 36
+    Top = 96
+    Width = 107
+    Caption = 'ver'
+    Enabled = False
+    TabOrder = 0
+    OnClick = addButtonClick
+  end
+  object Label2: TLabel
+    Left = 24
+    Height = 21
+    Top = 104
+    Width = 74
+    Caption = 'Nombre:'
+    Font.Height = -17
+    Font.Name = 'Sans'
+    ParentFont = False
+  end
+  object returnButton: TButton
+    Left = 160
+    Height = 33
+    Top = 184
+    Width = 120
+    Caption = 'Regresar'
+    TabOrder = 1
+    OnClick = returnButtonClick
+  end
+  object mailEdit: TEdit
+    Left = 104
+    Height = 36
+    Top = 96
+    Width = 192
+    TabOrder = 2
+    OnChange = mailEditChange
+  end
+end

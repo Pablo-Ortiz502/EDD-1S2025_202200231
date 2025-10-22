@@ -1,0 +1,24 @@
+digraph MerkleTree {
+  node [fontname="Arial"];
+  "f303ed040f1a755d900ba4acef72e5d6" [shape=ellipse, style=filled, fillcolor=lightblue,label="f303ed040f1a..."];
+  "f303ed040f1a755d900ba4acef72e5d6" -> "229ac5dd7f75d5139e29fa73a4514d11";
+  "229ac5dd7f75d5139e29fa73a4514d11" [shape=ellipse, style=filled, fillcolor=lightblue,label="229ac5dd7f75..."];
+  "229ac5dd7f75d5139e29fa73a4514d11" -> "aeb773979bd85cc88babd6a5502e1a26";
+  "aeb773979bd85cc88babd6a5502e1a26" [shape=ellipse, style=filled, fillcolor=lightblue,label="aeb773979bd8..."];
+  "aeb773979bd85cc88babd6a5502e1a26" -> "dd859971dcadb09a5495fe9312fb5cee";
+  "dd859971dcadb09a5495fe9312fb5cee" [shape=record, style=filled, fillcolor=lightgreen,label="Sender: 1\nAsunto: sdfa\nFecha: 21/10/2025  17:56\nHash: dd859971dcad..."];
+  "aeb773979bd85cc88babd6a5502e1a26" -> "7a07c20e91d5135edf2a1ea70dace292";
+  "7a07c20e91d5135edf2a1ea70dace292" [shape=record, style=filled, fillcolor=lightgreen,label="Sender: 1\nAsunto: sdfs\nFecha: 21/10/2025  17:56\nHash: 7a07c20e91d5..."];
+  "229ac5dd7f75d5139e29fa73a4514d11" -> "5f7d52e1143c94a8f6783f9276b12024";
+  "5f7d52e1143c94a8f6783f9276b12024" [shape=ellipse, style=filled, fillcolor=lightblue,label="5f7d52e1143c..."];
+  "5f7d52e1143c94a8f6783f9276b12024" -> "dc1dfe0c06f13047b1e64ffaa73834ea";
+  "dc1dfe0c06f13047b1e64ffaa73834ea" [shape=record, style=filled, fillcolor=lightgreen,label="Sender: 1\nAsunto: sdf\nFecha: 21/10/2025  17:56\nHash: dc1dfe0c06f1..."];
+  "5f7d52e1143c94a8f6783f9276b12024" -> "c41fbaa71130560c14f6a7fccf1dcfec";
+  "c41fbaa71130560c14f6a7fccf1dcfec" [shape=record, style=filled, fillcolor=lightgreen,label="Sender: 1\nAsunto: fdagdfg\nFecha: 21/10/2025  17:56\nHash: c41fbaa71130..."];
+  "f303ed040f1a755d900ba4acef72e5d6" -> "ab03ead1468cfd120815d030274483c3";
+  "ab03ead1468cfd120815d030274483c3" [shape=ellipse, style=filled, fillcolor=lightblue,label="ab03ead1468c..."];
+  "ab03ead1468cfd120815d030274483c3" -> "ab03ead1468cfd120815d030274483c3";
+  "ab03ead1468cfd120815d030274483c3" [shape=ellipse, style=filled, fillcolor=lightblue,label="ab03ead1468c..."];
+  "ab03ead1468cfd120815d030274483c3" -> "ab03ead1468cfd120815d030274483c3";
+  "ab03ead1468cfd120815d030274483c3" [shape=record, style=filled, fillcolor=lightgreen,label="Sender: 1\nAsunto: sdf\nFecha: 21/10/2025  17:56\nHash: ab03ead1468c..."];
+}

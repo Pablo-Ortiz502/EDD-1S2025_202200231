@@ -1,0 +1,29 @@
+digraph G {
+  node [shape=record, style=filled, fillcolor=lightblue];
+  rankdir=LR;
+  "5000" [label="Nombre: Pablo\nUsuario: 1\nEmail: 1\nEdad:0\nTel: 41877278"];
+  "5000" -> "5100";
+  "5100" [label="Nombre: Pablo\nUsuario: EliteDragon\nEmail: pablo@gmail.com\nEdad:0\nTel: 41877278"];
+  "5100" -> "5200";
+  "5200" [label="Nombre: Cesar\nUsuario: Elliwood\nEmail: 2\nEdad:0\nTel: 41877278"];
+  "5200" -> "1";
+  "1" [label="Nombre: Luis Garcia\nUsuario: auxluis\nEmail: aux-luis@edd.com\nEdad:34\nTel: 12345678"];
+  "1" -> "2";
+  "2" [label="Nombre: Marcos Itzep\nUsuario: auxmarcos\nEmail: aux-marcosg@edd.com\nEdad:41\nTel: 87654321"];
+  "2" -> "3";
+  "3" [label="Nombre: Steven Mejia\nUsuario: smejia\nEmail: smejia@edd.com\nEdad:29\nTel: 1234123"];
+  "3" -> "4";
+  "4" [label="Nombre: Linus Torvalds\nUsuario: linus\nEmail: linus@edd.com\nEdad:55\nTel: 30012345"];
+  "4" -> "5";
+  "5" [label="Nombre: Bill Gates\nUsuario: bgates\nEmail: bill@edd.com\nEdad:60\nTel: 30054321"];
+  "5" -> "6";
+  "6" [label="Nombre: Satya Nadella\nUsuario: snadella\nEmail: satya@edd.com\nEdad:48\nTel: 30111222"];
+  "6" -> "7";
+  "7" [label="Nombre: Grace Hopper\nUsuario: ghopper\nEmail: grace@edd.com\nEdad:65\nTel: 30133445"];
+  "7" -> "8";
+  "8" [label="Nombre: Alan Turing\nUsuario: aturing\nEmail: alan@edd.com\nEdad:39\nTel: 30255667"];
+  "8" -> "9";
+  "9" [label="Nombre: Ada Lovelace\nUsuario: alovelace\nEmail: ada@edd.com\nEdad:33\nTel: 30277889"];
+  "9" -> "10";
+  "10" [label="Nombre: Richard Stallman\nUsuario: rms\nEmail: rms@edd.com\nEdad:61\nTel: 30399000"];
+}

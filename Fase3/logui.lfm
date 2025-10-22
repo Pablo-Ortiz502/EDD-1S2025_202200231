@@ -1,0 +1,48 @@
+object Form21: TForm21
+  Left = 438
+  Height = 513
+  Top = 32
+  Width = 625
+  Caption = 'Form21'
+  ClientHeight = 513
+  ClientWidth = 625
+  OnClose = FormClose
+  OnCreate = FormCreate
+  object ListView1: TListView
+    Left = 48
+    Height = 256
+    Top = 144
+    Width = 552
+    Columns = <>
+    ReadOnly = True
+    TabOrder = 0
+  end
+  object Label5: TLabel
+    Left = 48
+    Height = 33
+    Top = 72
+    Width = 222
+    Caption = 'Logs de entrada'
+    Font.Height = -27
+    Font.Name = 'Sans'
+    ParentFont = False
+  end
+  object returnButton: TButton
+    Left = 48
+    Height = 32
+    Top = 424
+    Width = 112
+    Caption = 'Regresar'
+    TabOrder = 1
+    OnClick = returnButtonClick
+  end
+  object exportButton: TButton
+    Left = 440
+    Height = 33
+    Top = 72
+    Width = 128
+    Caption = 'Exportar'
+    TabOrder = 2
+    OnClick = exportButtonClick
+  end
+end

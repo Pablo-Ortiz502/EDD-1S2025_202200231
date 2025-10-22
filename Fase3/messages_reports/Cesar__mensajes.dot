@@ -1,0 +1,17 @@
+digraph G {
+  node [shape=record, style=filled, fillcolor=lightblue];
+  rankdir=LR;
+  "0" [label="Emisor: 1\nAsunto: sdf\nFecha: 21/10/2025  17:56\nMensaje: dsfasd"];
+  "0" -> "1"[dir=both];
+  "1" [label="Emisor: 1\nAsunto: sdfa\nFecha: 21/10/2025  17:56\nMensaje: sdafas"];
+  "1" -> "2"[dir=both];
+  "2" [label="Emisor: 1\nAsunto: sdfs\nFecha: 21/10/2025  17:56\nMensaje: w"];
+  "2" -> "3"[dir=both];
+  "3" [label="Emisor: 1\nAsunto: sdf\nFecha: 21/10/2025  17:56\nMensaje: sadfsadfsadf"];
+  "3" -> "4"[dir=both];
+  "4" [label="Emisor: 1\nAsunto: fdagdfg\nFecha: 21/10/2025  17:56\nMensaje: fgdga  WE"];
+  "4" -> "5"[dir=both];
+  "5" [label="Emisor: 1\nAsunto: sdf\nFecha: 21/10/2025  17:56\nMensaje: sdafsf"];
+  "5" -> "6"[dir=both];
+  "6" [label="Emisor: 1\nAsunto: sdafg\nFecha: 21/10/2025  17:56\nMensaje: adsffas"];
+}

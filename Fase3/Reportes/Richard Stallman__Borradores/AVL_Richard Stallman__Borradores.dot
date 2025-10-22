@@ -1,0 +1,11 @@
+digraph G {
+rankdir=TB;
+labelloc="t";
+label="Borradores";
+node [fontname="Arial"];
+n7F0A7D2809C0 [label="ID: 1\nReceptor: 1\nAsunto: sldknfálsknf\nFecha: 11/10/2025  10:41\nMensaje: sladkfnś", shape=box, style=filled, fillcolor=lightyellow, fontname="Arial"];
+n7F0A7D2809C0 -> n7F0A7E2AFEC0;
+n7F0A7E2AFEC0 [label="ID: 2\nReceptor: 1\nAsunto: pódfajgkda\nFecha: 11/10/2025  10:41\nMensaje: áspigeram", shape=box, style=filled, fillcolor=lightyellow, fontname="Arial"];
+n7F0A7D2809C0 -> n7F0A7E2B1BC0;
+n7F0A7E2B1BC0 [label="ID: 0\nReceptor: 1\nAsunto: s-lkfnñlsd\nFecha: 11/10/2025  10:41\nMensaje: alskfsald", shape=box, style=filled, fillcolor=lightyellow, fontname="Arial"];
+}

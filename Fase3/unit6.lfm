@@ -1,0 +1,183 @@
+object Form4: TForm4
+  Left = 387
+  Height = 503
+  Top = 32
+  Width = 1103
+  Caption = 'Form4'
+  ClientHeight = 503
+  ClientWidth = 1103
+  OnClose = FormClose
+  OnCreate = FormCreate
+  object ListView1: TListView
+    Left = 48
+    Height = 256
+    Top = 144
+    Width = 552
+    Columns = <>
+    ReadOnly = True
+    TabOrder = 0
+    OnClick = ListView1Click
+  end
+  object Label1: TLabel
+    Left = 616
+    Height = 19
+    Top = 96
+    Width = 84
+    Caption = 'Emisario:'
+    Font.Height = -16
+    Font.Name = 'Sans'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object senderLabel: TLabel
+    Left = 704
+    Height = 19
+    Top = 96
+    Width = 30
+    Caption = 'aaa'
+    Font.Height = -16
+    Font.Name = 'Sans'
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 616
+    Height = 19
+    Top = 128
+    Width = 58
+    Caption = 'Fecha:'
+    Font.Height = -16
+    Font.Name = 'Sans'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object dateLabel: TLabel
+    Left = 680
+    Height = 19
+    Top = 128
+    Width = 30
+    Caption = 'aaa'
+    Font.Height = -16
+    Font.Name = 'Sans'
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 616
+    Height = 19
+    Top = 160
+    Width = 69
+    Caption = 'Asunto:'
+    Font.Height = -16
+    Font.Name = 'Sans'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object subjecLabel: TLabel
+    Left = 688
+    Height = 19
+    Top = 160
+    Width = 30
+    Caption = 'aaa'
+    Font.Height = -16
+    Font.Name = 'Sans'
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 616
+    Height = 19
+    Top = 192
+    Width = 81
+    Caption = 'Mensaje:'
+    Font.Height = -16
+    Font.Name = 'Sans'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object messageMemo: TMemo
+    Left = 616
+    Height = 176
+    Top = 224
+    Width = 448
+    Enabled = False
+    Lines.Strings = (
+      'messageMemo'
+    )
+    ReadOnly = True
+    TabOrder = 1
+  end
+  object Label5: TLabel
+    Left = 48
+    Height = 33
+    Top = 32
+    Width = 288
+    Caption = 'Banndeja de entrada'
+    Font.Height = -27
+    Font.Name = 'Sans'
+    ParentFont = False
+  end
+  object returnButton: TButton
+    Left = 48
+    Height = 32
+    Top = 424
+    Width = 112
+    Caption = 'Regresar'
+    TabOrder = 2
+    OnClick = returnButtonClick
+  end
+  object discardButton: TButton
+    Left = 920
+    Height = 32
+    Top = 408
+    Width = 144
+    Caption = 'Enviar a papelera'
+    Color = clRed
+    Enabled = False
+    TabOrder = 3
+    OnClick = discardButtonClick
+  end
+  object preButton: TButton
+    Left = 48
+    Height = 32
+    Top = 88
+    Width = 128
+    Caption = 'Pre-Orden'
+    TabOrder = 4
+    OnClick = preButtonClick
+  end
+  object inButton: TButton
+    Left = 200
+    Height = 34
+    Top = 86
+    Width = 123
+    Caption = 'In-Orden'
+    TabOrder = 5
+    OnClick = inButtonClick
+  end
+  object postButton: TButton
+    Left = 336
+    Height = 33
+    Top = 86
+    Width = 128
+    Caption = 'Post-Orden'
+    TabOrder = 6
+    OnClick = postButtonClick
+  end
+  object favButton: TButton
+    Left = 776
+    Height = 32
+    Top = 408
+    Width = 120
+    Caption = 'Favorito'
+    TabOrder = 7
+    OnClick = favButtonClick
+  end
+  object downButton: TButton
+    Left = 616
+    Height = 33
+    Top = 408
+    Width = 128
+    Caption = 'Descargar'
+    Enabled = False
+    TabOrder = 8
+    OnClick = downButtonClick
+  end
+end

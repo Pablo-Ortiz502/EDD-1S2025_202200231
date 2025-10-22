@@ -1,0 +1,11 @@
+digraph G {
+  node [shape=record, style=filled, fillcolor=lightblue];
+  rankdir=LR;
+  "0" [label="Emisario: 1\nFecha: 09/10/2025  22:01:54\nMensaje: sdfasdf"];
+  "0" -> "1";
+  "1" [label="Emisario: 1\nFecha: 09/10/2025  22:02:03\nMensaje: gdfhfghjghjhg"];
+  "1" -> "2";
+  "2" [label="Emisario: 1\nFecha: 09/10/2025  22:02:09\nMensaje: 123123123"];
+  "2" -> "3";
+  "3" [label="Emisario: 1\nFecha: 09/10/2025  22:02:14\nMensaje: w12sdfa"];
+}

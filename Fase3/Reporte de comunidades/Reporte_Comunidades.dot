@@ -1,0 +1,9 @@
+digraph G {
+graph [splines=true, nodesep=0.6, ranksep=0.8];
+node [shape=box, style="rounded,filled", fillcolor="#fdfcf5", color="#e28743", fontname="Arial"];
+edge [color="#888888", arrowsize=0.7];
+rankdir=TB;
+labelloc="t";
+label="Reporte de comunidades";
+n7F0A82043000 [label="c1\nFecha creacion: 11/10/2025\nMensajes publicados: 2", shape=record, style="filled,rounded", fillcolor="#fdfcf5", color="#e28743"];
+}

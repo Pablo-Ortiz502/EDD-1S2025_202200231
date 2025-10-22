@@ -1,0 +1,5 @@
+digraph G {
+  node [shape=record, style=filled, fillcolor=lightblue];
+  rankdir=LR;
+  "0" [label="Emisor: linus@edd.com\nAsunto: Proyecto GNU\nFecha: 11/10/2025  10:38\nMensaje: ¿Te animás a armar algo en GNU?"];
+}

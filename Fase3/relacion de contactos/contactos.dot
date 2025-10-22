@@ -1,0 +1,7 @@
+graph G {
+  node [shape=circle, style=filled, color=lightblue];
+  "luis" -- "auxmarcos";
+  "luis" -- "auxsteven";
+  "william" -- "auxluis";
+  "william" -- "auxsteven";
+}

@@ -1,0 +1,6 @@
+{
+  "Usuarios": [
+    { "Usuario": "Luis", "Contactos": ["auxmarcos", "auxsteven"] },
+    { "Usuario": "William", "Contactos": ["auxLuis", "auxSteven"] }
+  ]
+}

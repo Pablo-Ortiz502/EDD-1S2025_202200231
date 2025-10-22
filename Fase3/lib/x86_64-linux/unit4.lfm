@@ -1,0 +1,167 @@
+object Form3: TForm3
+  Left = 248
+  Height = 664
+  Top = 32
+  Width = 461
+  Caption = 'Form3'
+  ClientHeight = 664
+  ClientWidth = 461
+  Color = clSkyBlue
+  OnClose = FormClose
+  object entryButton: TButton
+    Left = 72
+    Height = 25
+    Top = 96
+    Width = 160
+    Caption = 'Badeja de entrada'
+    TabOrder = 0
+    OnClick = entryButtonClick
+  end
+  object sedButton: TButton
+    Left = 72
+    Height = 25
+    Top = 144
+    Width = 160
+    Caption = 'Enviar Correo'
+    TabOrder = 1
+    OnClick = sedButtonClick
+  end
+  object trashButton: TButton
+    Left = 72
+    Height = 25
+    Top = 192
+    Width = 160
+    Caption = 'Papelera'
+    TabOrder = 2
+    OnClick = trashButtonClick
+  end
+  object programButton: TButton
+    Left = 72
+    Height = 25
+    Top = 240
+    Width = 160
+    Caption = 'Programar Correo'
+    TabOrder = 3
+    OnClick = programButtonClick
+  end
+  object programedButton: TButton
+    Left = 72
+    Height = 25
+    Top = 288
+    Width = 160
+    Caption = 'Correos programados'
+    TabOrder = 4
+    OnClick = programedButtonClick
+  end
+  object addCButton: TButton
+    Left = 72
+    Height = 25
+    Top = 384
+    Width = 160
+    Caption = 'Agregar Contacto'
+    TabOrder = 5
+    OnClick = addCButtonClick
+  end
+  object postButton: TButton
+    Left = 72
+    Height = 25
+    Top = 480
+    Width = 160
+    Caption = 'Actualizar Perfil'
+    TabOrder = 6
+    OnClick = postButtonClick
+  end
+  object reportButton: TButton
+    Left = 72
+    Height = 25
+    Top = 528
+    Width = 160
+    Caption = 'Generar Reportes'
+    TabOrder = 7
+    OnClick = reportButtonClick
+  end
+  object exitButton: TButton
+    Left = 168
+    Height = 32
+    Top = 592
+    Width = 136
+    Caption = 'Salir'
+    TabOrder = 8
+    OnClick = exitButtonClick
+  end
+  object Label1: TLabel
+    Left = 72
+    Height = 28
+    Top = 24
+    Width = 153
+    Caption = 'Bienvienido'
+    Font.Height = -23
+    Font.Name = 'Sans'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 272
+    Height = 24
+    Top = 24
+    Width = 24
+    Caption = 'aa'
+    Font.Height = -20
+    Font.Name = 'Sans'
+    ParentFont = False
+  end
+  object contactButton: TButton
+    Left = 72
+    Height = 25
+    Top = 432
+    Width = 160
+    Caption = 'Contactos'
+    TabOrder = 9
+    OnClick = contactButtonClick
+  end
+  object protoButton: TButton
+    Left = 72
+    Height = 25
+    Top = 336
+    Width = 160
+    Caption = 'Borradores'
+    TabOrder = 10
+    OnClick = protoButtonClick
+  end
+  object favButton: TButton
+    Left = 264
+    Height = 25
+    Top = 96
+    Width = 163
+    Caption = 'Favoritos'
+    TabOrder = 11
+    OnClick = favButtonClick
+  end
+  object deleteConButton: TButton
+    Left = 264
+    Height = 25
+    Top = 144
+    Width = 163
+    Caption = 'Eliminar Contacto'
+    TabOrder = 12
+    OnClick = deleteConButtonClick
+  end
+  object comButton: TButton
+    Left = 264
+    Height = 25
+    Top = 192
+    Width = 168
+    Caption = 'Comunidades'
+    TabOrder = 13
+    OnClick = comButtonClick
+  end
+  object privButton: TButton
+    Left = 264
+    Height = 25
+    Top = 240
+    Width = 168
+    Caption = 'Privados'
+    TabOrder = 14
+    OnClick = privButtonClick
+  end
+end
